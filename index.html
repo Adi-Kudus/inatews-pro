@@ -85,6 +85,55 @@
         .flip-back { transform: rotateY(180deg); }
         .flip-container.flipped .flip-inner { transform: rotateY(180deg); }
 
+        
+        /* PROFESSIONAL V4 ANIMATIONS */
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .shimmer-text { background: linear-gradient(90deg, #06b6d4 0%, #ffffff 50%, #06b6d4 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; }
+        
+        @keyframes glitchEffect { 0%, 100% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(2px, -2px); } 60% { transform: translate(-1px, -1px); } 80% { transform: translate(1px, 1px); } }
+        .glitch-hover:hover { animation: glitchEffect 0.3s ease-in-out; }
+        
+        @keyframes neonPulse { 0%, 100% { box-shadow: 0 0 10px rgba(6,182,212,0.5), 0 0 20px rgba(6,182,212,0.3); } 50% { box-shadow: 0 0 20px rgba(6,182,212,0.8), 0 0 40px rgba(6,182,212,0.5); } }
+        .neon-pulse { animation: neonPulse 2s ease-in-out infinite; }
+        
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-in-up { animation: slideInUp 0.5s ease-out forwards; }
+        
+        @keyframes dataFlow { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
+        .data-flow-line { stroke-dasharray: 10; animation: dataFlow 2s linear infinite; }
+        
+        @keyframes radarSweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .radar-sweep { animation: radarSweep 4s linear infinite; transform-origin: center; }
+        
+        @keyframes typewriter { from { width: 0; } to { width: 100%; } }
+        .typewriter { overflow: hidden; white-space: nowrap; animation: typewriter 2s steps(40) forwards; }
+        
+        /* PROGRAMMER AVATAR ANIMATION */
+        .programmer-avatar { position: relative; display: flex; align-items: center; justify-content: center; }
+        .programmer-avatar::before { content: ''; position: absolute; inset: -4px; border-radius: 14px; background: conic-gradient(from 0deg, #ec4899, #8b5cf6, #06b6d4, #10b981, #ec4899); animation: rotate 3s linear infinite; z-index: 0; opacity: 0.6; }
+        .programmer-avatar > * { position: relative; z-index: 1; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        @keyframes codeType { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .code-blink { animation: codeType 1.2s infinite; }
+        
+        /* IMPROVED CHAT BUBBLE */
+        .chat-bubble-pro { border-radius: 16px 16px 4px 16px; padding: 14px 16px; transition: all 0.3s ease; }
+        .chat-bubble-pro:hover { transform: scale(1.01); }
+        
+        /* DASHBOARD CARD GLOW */
+        @keyframes cardGlow { 0%, 100% { box-shadow: 0 0 8px rgba(6,182,212,0.2); } 50% { box-shadow: 0 0 16px rgba(6,182,212,0.4); } }
+        .card-glow-anim { animation: cardGlow 3s ease-in-out infinite; }
+        
+        /* SEISMIC WAVE VISUALIZATION */
+        @keyframes seismicWave { 0% { transform: scaleY(0.3); opacity: 0.5; } 50% { transform: scaleY(1.2); opacity: 1; } 100% { transform: scaleY(0.3); opacity: 0.5; } }
+        .seismic-bar { animation: seismicWave 1.5s ease-in-out infinite; }
+        
+        /* DATA TABLE STYLING */
+        .data-table-pro th { background: linear-gradient(180deg, rgba(6,182,212,0.15), rgba(6,182,212,0.05)); padding: 8px 10px; font-size: 13px; }
+        .data-table-pro td { padding: 7px 10px; font-size: 13px; border-bottom: 1px solid rgba(6,182,212,0.1); }
+        .data-table-pro tr:hover { background: rgba(6,182,212,0.05); }
+
         /* Leaflet & Custom Popups */
         .leaflet-container { background: #020617 !important; font-family: 'JetBrains Mono', monospace; }
         .leaflet-popup-content-wrapper { background: rgba(15, 23, 42, 0.96) !important; color: #fff !important; border: 1.5px solid #06b6d4 !important; border-radius: 10px !important; backdrop-filter: blur(10px) !important; box-shadow: 0 15px 35px rgba(0,0,0,0.85) !important; padding: 0 !important; }
@@ -292,56 +341,6 @@
         .chat-glow-tsunami { border: 1.5px solid #ef4444 !important; box-shadow: 0 0 25px rgba(239, 68, 68, 0.35), inset 0 0 15px rgba(239, 68, 68, 0.15); }
         .chat-glow-monsoon { border: 1.5px solid #f59e0b !important; box-shadow: 0 0 25px rgba(245, 158, 11, 0.35), inset 0 0 15px rgba(245, 158, 11, 0.15); }
 
-        
-        /* PROFESSIONAL V4 ANIMATIONS */
-        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-        .shimmer-text { background: linear-gradient(90deg, #06b6d4 0%, #ffffff 50%, #06b6d4 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; }
-        
-        @keyframes glitchEffect { 0%, 100% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(2px, -2px); } 60% { transform: translate(-1px, -1px); } 80% { transform: translate(1px, 1px); } }
-        .glitch-hover:hover { animation: glitchEffect 0.3s ease-in-out; }
-        
-        @keyframes neonPulse { 0%, 100% { box-shadow: 0 0 10px rgba(6,182,212,0.5), 0 0 20px rgba(6,182,212,0.3); } 50% { box-shadow: 0 0 20px rgba(6,182,212,0.8), 0 0 40px rgba(6,182,212,0.5); } }
-        .neon-pulse { animation: neonPulse 2s ease-in-out infinite; }
-        
-        @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .slide-in-up { animation: slideInUp 0.5s ease-out forwards; }
-        
-        @keyframes dataFlow { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
-        .data-flow-line { stroke-dasharray: 10; animation: dataFlow 2s linear infinite; }
-        
-        @keyframes radarSweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .radar-sweep { animation: radarSweep 4s linear infinite; transform-origin: center; }
-        
-        @keyframes typewriter { from { width: 0; } to { width: 100%; } }
-        .typewriter { overflow: hidden; white-space: nowrap; animation: typewriter 2s steps(40) forwards; }
-        
-        /* PROGRAMMER AVATAR ANIMATION */
-        .programmer-avatar { position: relative; display: flex; align-items: center; justify-content: center; }
-        .programmer-avatar::before { content: ''; position: absolute; inset: -4px; border-radius: 14px; background: conic-gradient(from 0deg, #ec4899, #8b5cf6, #06b6d4, #10b981, #ec4899); animation: rotate 3s linear infinite; z-index: 0; opacity: 0.6; }
-        .programmer-avatar > * { position: relative; z-index: 1; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        
-        @keyframes codeType { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .code-blink { animation: codeType 1.2s infinite; }
-        
-        /* IMPROVED CHAT BUBBLE */
-        .chat-bubble-pro { border-radius: 16px 16px 4px 16px; padding: 14px 16px; transition: all 0.3s ease; }
-        .chat-bubble-pro:hover { transform: scale(1.01); }
-        
-        /* DASHBOARD CARD GLOW */
-        @keyframes cardGlow { 0%, 100% { box-shadow: 0 0 8px rgba(6,182,212,0.2); } 50% { box-shadow: 0 0 16px rgba(6,182,212,0.4); } }
-        .card-glow-anim { animation: cardGlow 3s ease-in-out infinite; }
-        
-        /* SEISMIC WAVE VISUALIZATION */
-        @keyframes seismicWave { 0% { transform: scaleY(0.3); opacity: 0.5; } 50% { transform: scaleY(1.2); opacity: 1; } 100% { transform: scaleY(0.3); opacity: 0.5; } }
-        .seismic-bar { animation: seismicWave 1.5s ease-in-out infinite; }
-        
-        /* DATA TABLE STYLING */
-        .data-table-pro th { background: linear-gradient(180deg, rgba(6,182,212,0.15), rgba(6,182,212,0.05)); padding: 8px 10px; font-size: 13px; }
-        .data-table-pro td { padding: 7px 10px; font-size: 13px; border-bottom: 1px solid rgba(6,182,212,0.1); }
-        .data-table-pro tr:hover { background: rgba(6,182,212,0.05); }
-        
-
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); border-radius: 8px; }
@@ -437,9 +436,9 @@
             </div>
             
             <div>
-                <h1 class="font-tech text-2xl md:text-3xl font-black tracking-[0.25em] uppercase shimmer-text">InaTEWS PRO v4.0</h1>
+                <h1 class="font-tech text-2xl md:text-3xl font-black text-cyan-400 tracking-[0.25em] uppercase glow-text">InaTEWS PRO v3.0</h1>
                 <p class="font-mono text-xs text-slate-400 tracking-widest mt-1 uppercase flex items-center justify-center gap-2 font-bold">
-                    <i class="fa-solid fa-satellite-dish animate-pulse text-amber-500"></i> QUANTUM SEISMIC &amp; TSUNAMI TELEMETRY &bull; MULTI-METHOD GMPE ENGINE<span class="loading-dots text-cyan-500"></span>
+                    <i class="fa-solid fa-satellite-dish animate-pulse text-amber-500"></i> QUANTUM SEISMIC &amp; TSUNAMI TELEMETRY<span class="loading-dots text-cyan-500"></span>
                 </p>
             </div>
 
@@ -455,10 +454,10 @@
                 <div class="h-full bg-gradient-to-r from-cyan-500 via-emerald-400 to-rose-500 rounded-full animate-loading-progress shadow-[0_0_15px_rgba(6,182,212,0.9)]"></div>
             </div>
             
-            <div class="mt-3 text-[13px] font-mono text-slate-500 tracking-widest uppercase">
+            <div class="mt-3 text-[10px] font-mono text-slate-500 tracking-widest uppercase">
                 CALIBRATING 180 SEISMIC STATIONS • BMKG FEED READY
             </div>
-            <div class="mt-2 text-[12px] font-mono text-slate-600 tracking-wider">
+            <div class="mt-2 text-[9px] font-mono text-slate-600 tracking-wider">
                 (Klik layar ini untuk langsung masuk ke dasbor)
             </div>
         </div>
@@ -517,7 +516,7 @@
                 <p id="scWisdomQuoteText" class="text-slate-200 font-sans text-xs md:text-sm italic leading-relaxed quote-animated font-medium">
                     "Kesiapsiagaan hari ini adalah penyelamat kehidupan esok hari. Bersahabat dengan alam, tanggap terhadap bencana."
                 </p>
-                <span id="scWisdomQuoteAuthor" class="block text-[13px] font-mono text-cyan-400 font-bold mt-1.5 tracking-wider uppercase">
+                <span id="scWisdomQuoteAuthor" class="block text-[10px] font-mono text-cyan-400 font-bold mt-1.5 tracking-wider uppercase">
                     — Prinsip Mitigasi &amp; Ketangguhan Hidup
                 </span>
             </div>
@@ -541,9 +540,9 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <h1 class="font-tech text-lg md:text-xl font-black tracking-widest color-main uppercase glow-text">InaTEWS PRO</h1>
-                        <span class="text-[12px] font-mono px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-500/50 rounded font-bold" title="Versi Rilis Aplikasi v4.0 Super Canggih">v4.0 PRO</span>
+                        <span class="text-[9px] font-mono px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-500/50 rounded font-bold" title="Versi Rilis Aplikasi v3.0 Super Canggih">v4.0 PRO</span>
                     </div>
-                    <p class="text-[13px] font-mono text-emerald-400 mt-0.5 font-bold flex items-center gap-1.5 uppercase" title="Status Sinyal Feed Seismologi BMKG Real-Time">
+                    <p class="text-[10px] font-mono text-emerald-400 mt-0.5 font-bold flex items-center gap-1.5 uppercase" title="Status Sinyal Feed Seismologi BMKG Real-Time">
                         <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span> LIVE SEISMIC &amp; GEOTECHNICAL MONITORING
                     </p>
                 </div>
@@ -553,7 +552,7 @@
             <div class="flex flex-wrap justify-center items-center gap-3 w-full lg:w-auto" title="Waktu Aktual Tersinkronisasi BMKG">
                 <div class="bg-inner-box py-1.5 px-6 rounded-xl flex items-center gap-4 shadow-sm border-cyan-500/40">
                     <div class="text-right">
-                        <div class="text-[12px] font-bold text-slate-400 tracking-wider uppercase" id="lbl-real-day">-</div>
+                        <div class="text-[9px] font-bold text-slate-400 tracking-wider uppercase" id="lbl-real-day">-</div>
                         <div class="text-xl md:text-2xl font-black text-cyan-400 font-mono glow-text flex items-center gap-2">
                             <i class="fa-regular fa-clock text-sm text-cyan-500"></i>
                             <span id="lbl-real-clock">00:00:00</span>
@@ -561,7 +560,7 @@
                         </div>
                     </div>
                     <div class="border-l border-theme pl-3" title="Status Peringatan Dini Bencana">
-                        <div class="text-[12px] font-mono text-slate-400">STATUS SIAGA:</div>
+                        <div class="text-[9px] font-mono text-slate-400">STATUS SIAGA:</div>
                         <span id="top-alert-status-badge" class="text-xs font-black text-emerald-400 font-mono">NORMAL</span>
                     </div>
                 </div>
@@ -572,7 +571,7 @@
                 <div class="bg-inner-box px-3 py-1.5 rounded-lg flex items-center gap-2 text-left" title="Hitung Mundur Sinkronisasi Data BMKG">
                     <i class="fa-solid fa-arrows-rotate text-cyan-400 text-sm animate-spin"></i>
                     <div>
-                        <div class="text-[11px] font-black color-sub font-tech tracking-wider">SYNC BMKG</div>
+                        <div class="text-[8px] font-black color-sub font-tech tracking-wider">SYNC BMKG</div>
                         <div class="text-xs font-black color-main font-mono" id="live-timer">60s</div>
                     </div>
                 </div>
@@ -580,15 +579,15 @@
                 <div class="bg-inner-box px-3 py-1.5 rounded-lg flex items-center gap-2 text-left" title="Status Sensor Pelampung Tsunami Laut Lepas (InaBUOY / OBPR)">
                     <i class="fa-solid fa-water text-emerald-400 text-sm"></i>
                     <div>
-                        <div class="text-[11px] font-black color-sub font-tech tracking-wider">InaBUOY</div>
+                        <div class="text-[8px] font-black color-sub font-tech tracking-wider">InaBUOY</div>
                         <div class="text-xs font-black text-emerald-400 font-mono">NOMINAL</div>
                     </div>
                 </div>
 
                 <!-- Siren Audio Control -->
                 <div class="flex items-center bg-slate-950 p-1 border-2 border-theme rounded-lg gap-1">
-                    <button onclick="startTsunamiSiren()" id="mainBtnSiren" class="px-2.5 py-1.5 text-[13px] rounded font-tech font-black bg-blue-950 text-blue-400 border border-blue-800/60 hover:bg-blue-900 cursor-pointer uppercase" title="Uji Coba Sirine Peringatan Tsunami">SIREN</button>
-                    <button onclick="stopTsunamiSiren()" id="mainBtnMute" class="px-2.5 py-1.5 text-[13px] rounded font-tech font-black bg-red-950 text-red-400 border border-red-800/60 hover:bg-red-900 cursor-pointer uppercase" title="Mute Suara Sirine"><i class="fa-solid fa-volume-xmark"></i></button>
+                    <button onclick="startTsunamiSiren()" id="mainBtnSiren" class="px-2.5 py-1.5 text-[10px] rounded font-tech font-black bg-blue-950 text-blue-400 border border-blue-800/60 hover:bg-blue-900 cursor-pointer uppercase" title="Uji Coba Sirine Peringatan Tsunami">SIREN</button>
+                    <button onclick="stopTsunamiSiren()" id="mainBtnMute" class="px-2.5 py-1.5 text-[10px] rounded font-tech font-black bg-red-950 text-red-400 border border-red-800/60 hover:bg-red-900 cursor-pointer uppercase" title="Mute Suara Sirine"><i class="fa-solid fa-volume-xmark"></i></button>
                 </div>
                 
                 <!-- Utilities -->
@@ -599,10 +598,10 @@
                     <button type="button" onclick="toggleVoiceAssistant()" id="btnVoiceToggle" class="bg-inner-box text-cyan-400 hover:bg-cyan-950 p-2.5 rounded-lg border border-cyan-500/50 cursor-pointer transition-colors shadow-sm" title="On/Off Asisten Suara AI (Text-to-Speech)">
                         <i id="iconVoiceToggle" class="fa-solid fa-volume-high text-sm"></i>
                     </button>
-                    <button type="button" onclick="openCreatorModal()" class="bg-slate-800 text-fuchsia-300 hover:bg-slate-700 text-[13px] font-mono font-black px-3 py-2.5 rounded-lg border border-fuchsia-500/40 cursor-pointer transition-colors shadow-sm flex items-center gap-1.5" title="Buka Profil Pengembang (Mohamad Hartadi)">
+                    <button type="button" onclick="openCreatorModal()" class="bg-slate-800 text-fuchsia-300 hover:bg-slate-700 text-[10px] font-mono font-black px-3 py-2.5 rounded-lg border border-fuchsia-500/40 cursor-pointer transition-colors shadow-sm flex items-center gap-1.5" title="Buka Profil Pengembang (Mohamad Hartadi)">
                         <i class="fa-solid fa-code text-fuchsia-400"></i> CREATOR
                     </button>
-                    <button type="button" onclick="openHelpModal()" class="bg-emerald-950 text-emerald-300 hover:bg-emerald-900 text-[13px] font-mono font-black px-3 py-2.5 rounded-lg border border-emerald-500/40 cursor-pointer transition-colors shadow-sm flex items-center gap-1.5" title="Buku Panduan & Referensi Sistem (Shortcut: ?)">
+                    <button type="button" onclick="openHelpModal()" class="bg-emerald-950 text-emerald-300 hover:bg-emerald-900 text-[10px] font-mono font-black px-3 py-2.5 rounded-lg border border-emerald-500/40 cursor-pointer transition-colors shadow-sm flex items-center gap-1.5" title="Buku Panduan & Referensi Sistem (Shortcut: ?)">
                         <i class="fa-solid fa-circle-question"></i> MANUAL
                     </button>
                 </div>
@@ -625,65 +624,65 @@
                     <h2 class="font-tech text-xs md:text-sm font-black color-main flex items-center gap-2 uppercase tracking-wider">
                         <i class="fa-solid fa-volcano text-amber-400"></i> Tektonik &amp; Pesisir
                     </h2>
-                    <span class="text-[12px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">MEGATHRUST ZONE</span>
+                    <span class="text-[9px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">MEGATHRUST ZONE</span>
                 </div>
                 
                 <div class="mt-3 space-y-3 overflow-y-auto pr-1 font-mono text-xs flex-1">
                     
                     <!-- Indikator Alami Pesisir -->
                     <div class="space-y-2">
-                        <span class="text-[13px] font-tech font-bold text-slate-400 uppercase tracking-wider block">Indikator Alami Tsunami</span>
+                        <span class="text-[10px] font-tech font-bold text-slate-400 uppercase tracking-wider block">Indikator Alami Tsunami</span>
                         
                         <div class="p-2.5 bg-inner-box rounded-xl border-l-4 border-cyan-500 shadow-sm">
                             <span class="text-cyan-400 font-tech text-[11px] font-black block mb-0.5">GUNCANGAN KUAT &gt; 20 DETIK</span>
-                            <p class="text-[13px] color-sub leading-snug">Guncangan seismik panjang menandakan pelepasan energi sesar megathrust laut dalam yang mampu memicu tsunami.</p>
+                            <p class="text-[10px] color-sub leading-snug">Guncangan seismik panjang menandakan pelepasan energi sesar megathrust laut dalam yang mampu memicu tsunami.</p>
                         </div>
 
                         <div class="p-2.5 bg-inner-box rounded-xl border-l-4 border-amber-500 shadow-sm">
                             <span class="text-amber-400 font-tech text-[11px] font-black block mb-0.5">SURUT AIR LAUT EKSTREM</span>
-                            <p class="text-[13px] color-sub leading-snug">Mundurnya garis pantai secara mendadak akibat penurunan vertikal dasar samudra (*sea-bottom subsidence*).</p>
+                            <p class="text-[10px] color-sub leading-snug">Mundurnya garis pantai secara mendadak akibat penurunan vertikal dasar samudra (*sea-bottom subsidence*).</p>
                         </div>
 
                         <div class="p-2.5 bg-inner-box rounded-xl border-l-4 border-rose-500 shadow-sm">
                             <span class="text-rose-400 font-tech text-[11px] font-black block mb-0.5">DENTUMAN GEMURUH LAUT</span>
-                            <p class="text-[13px] color-sub leading-snug">Suara gemuruh frekuensi rendah dari cakrawala laut menandakan gelombang tsunami mendekati perairan dangkal.</p>
+                            <p class="text-[10px] color-sub leading-snug">Suara gemuruh frekuensi rendah dari cakrawala laut menandakan gelombang tsunami mendekati perairan dangkal.</p>
                         </div>
                     </div>
 
                     <!-- Zona Megathrust Aktif Nusantara -->
                     <div class="pt-3 border-t border-theme">
-                        <span class="font-tech text-[13px] text-red-400 font-bold block mb-1.5 uppercase tracking-wider">
+                        <span class="font-tech text-[10px] text-red-400 font-bold block mb-1.5 uppercase tracking-wider">
                             <i class="fa-solid fa-triangle-exclamation mr-1"></i> Zona Megathrust Aktif
                         </span>
                         <div class="space-y-1.5">
                             <div onclick="focusMegathrust(-2.5, 99.5, 'Megathrust Mentawai-Siberut', 8.9)" class="p-2 bg-inner-box rounded-lg border-l-2 border-red-500 hover:bg-red-950/40 transition-colors cursor-pointer flex justify-between items-center shadow-sm">
                                 <div>
-                                    <b class="text-white text-[13px] block">Megathrust Mentawai-Siberut</b>
-                                    <span class="text-[12px] text-slate-400">Sumatera Barat • Mmax: 8.9</span>
+                                    <b class="text-white text-[10px] block">Megathrust Mentawai-Siberut</b>
+                                    <span class="text-[9px] text-slate-400">Sumatera Barat • Mmax: 8.9</span>
                                 </div>
                                 <i class="fa-solid fa-crosshairs text-red-400 text-xs"></i>
                             </div>
 
                             <div onclick="focusMegathrust(-6.5, 104.5, 'Megathrust Selat Sunda', 8.7)" class="p-2 bg-inner-box rounded-lg border-l-2 border-red-500 hover:bg-red-950/40 transition-colors cursor-pointer flex justify-between items-center shadow-sm">
                                 <div>
-                                    <b class="text-white text-[13px] block">Megathrust Selat Sunda</b>
-                                    <span class="text-[12px] text-slate-400">Banten / Lampung • Mmax: 8.7</span>
+                                    <b class="text-white text-[10px] block">Megathrust Selat Sunda</b>
+                                    <span class="text-[9px] text-slate-400">Banten / Lampung • Mmax: 8.7</span>
                                 </div>
                                 <i class="fa-solid fa-crosshairs text-red-400 text-xs"></i>
                             </div>
 
                             <div onclick="focusMegathrust(-9.0, 112.5, 'Megathrust Jawa Selatan', 8.8)" class="p-2 bg-inner-box rounded-lg border-l-2 border-red-500 hover:bg-red-950/40 transition-colors cursor-pointer flex justify-between items-center shadow-sm">
                                 <div>
-                                    <b class="text-white text-[13px] block">Megathrust Jawa Selatan</b>
-                                    <span class="text-[12px] text-slate-400">Jabar - Jatim • Mmax: 8.8</span>
+                                    <b class="text-white text-[10px] block">Megathrust Jawa Selatan</b>
+                                    <span class="text-[9px] text-slate-400">Jabar - Jatim • Mmax: 8.8</span>
                                 </div>
                                 <i class="fa-solid fa-crosshairs text-red-400 text-xs"></i>
                             </div>
 
                             <div onclick="focusMegathrust(-0.5, 120.0, 'Zona Sesar Palu-Koro', 7.5)" class="p-2 bg-inner-box rounded-lg border-l-2 border-amber-500 hover:bg-amber-950/40 transition-colors cursor-pointer flex justify-between items-center shadow-sm">
                                 <div>
-                                    <b class="text-white text-[13px] block">Sesar Aktif Palu-Koro</b>
-                                    <span class="text-[12px] text-slate-400">Sulawesi Tengah • Sesar Geser</span>
+                                    <b class="text-white text-[10px] block">Sesar Aktif Palu-Koro</b>
+                                    <span class="text-[9px] text-slate-400">Sulawesi Tengah • Sesar Geser</span>
                                 </div>
                                 <i class="fa-solid fa-crosshairs text-amber-400 text-xs"></i>
                             </div>
@@ -692,7 +691,7 @@
 
                     <!-- Protokol Mitigasi 20-20-20 -->
                     <div class="pt-3 border-t border-theme">
-                        <div class="p-2.5 bg-gradient-to-r from-slate-900 to-indigo-950 rounded-xl border border-indigo-500/40 text-[13px]">
+                        <div class="p-2.5 bg-gradient-to-r from-slate-900 to-indigo-950 rounded-xl border border-indigo-500/40 text-[10px]">
                             <b class="text-indigo-300 font-tech block mb-1 uppercase"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> PROTOKOL MITIGASI 20-20-20</b>
                             <p class="text-slate-300 leading-snug">Gempa terasa <b class="text-white">20 Detik</b>? Segera evakuasi dalam <b class="text-white">20 Menit</b> ke tempat dengan ketinggian minimal <b class="text-white">20 Meter</b>!</p>
                         </div>
@@ -709,31 +708,31 @@
                          <h2 class="font-tech text-xs md:text-sm font-black text-cyan-400 flex items-center gap-2 uppercase tracking-wider">
                              <i class="fa-solid fa-earth-asia animate-pulse text-amber-400"></i> Peta Episentrum Seismik
                          </h2>
-                         <span class="hidden sm:inline-block text-[12px] font-mono text-slate-400 border-l border-slate-700 pl-2">NUSANTARA FAULT &amp; SUBDUCTION</span>
+                         <span class="hidden sm:inline-block text-[9px] font-mono text-slate-400 border-l border-slate-700 pl-2">NUSANTARA FAULT &amp; SUBDUCTION</span>
                      </div>
                      
                      <div class="flex items-center gap-1.5">
                          <!-- Basemap Layer Switcher -->
-                         <div class="flex rounded bg-inner-box p-0.5 text-[12px] font-mono font-bold">
-                             <button onclick="switchBaseMapLayer('satellite')" id="mapBtn-satellite" class="px-3 py-1.5 rounded-lg bg-cyan-700 text-white cursor-pointer font-bold shadow-md" title="Google Satellite Imagery">SAT</button>
+                         <div class="flex rounded bg-inner-box p-0.5 text-[9px] font-mono font-bold">
+                             <button onclick="switchBaseMapLayer('satellite')" id="mapBtn-satellite" class="px-2 py-1 rounded bg-cyan-700 text-white cursor-pointer" title="Google Satellite Imagery">SAT</button>
                              <button onclick="switchBaseMapLayer('dark')" id="mapBtn-dark" class="px-2 py-1 rounded color-sub hover:color-main cursor-pointer" title="CartoDB Dark Theme">DARK</button>
                              <button onclick="switchBaseMapLayer('terrain')" id="mapBtn-terrain" class="px-2 py-1 rounded color-sub hover:color-main cursor-pointer" title="ArcGIS Topo 3D">TOPO</button>
                              <button onclick="switchBaseMapLayer('street')" id="mapBtn-street" class="px-2 py-1 rounded color-sub hover:color-main cursor-pointer" title="OpenStreetMap Standard">OSM</button>
                          </div>
 
                          <!-- P2P Ruler / Distance Tool -->
-                         <button onclick="toggleSeismicRulerTool()" id="btnSeismicRuler" class="px-2 py-1 bg-inner-box text-emerald-400 hover:text-white rounded border border-theme cursor-pointer text-[12px] font-mono font-bold flex items-center gap-1" title="Alat Ukur Jarak Seismik & Estimasi PGA (Peak Ground Acceleration)">
+                         <button onclick="toggleSeismicRulerTool()" id="btnSeismicRuler" class="px-2 py-1 bg-inner-box text-emerald-400 hover:text-white rounded border border-theme cursor-pointer text-[9px] font-mono font-bold flex items-center gap-1" title="Alat Ukur Jarak Seismik & Estimasi PGA (Peak Ground Acceleration)">
                              <i class="fa-solid fa-ruler-combined"></i> RULER PGA
                          </button>
 
                          <!-- Switch Map / Weather Waves -->
-                         <div class="flex rounded bg-inner-box p-0.5 text-[12px] font-mono font-bold">
+                         <div class="flex rounded bg-inner-box p-0.5 text-[9px] font-mono font-bold">
                              <button onclick="toggleMapWeatherFlip('map')" id="btnViewMap" class="px-2.5 py-1 rounded bg-cyan-600 text-white font-black shadow-md cursor-pointer transition-all">PETA GIS</button>
                              <button onclick="toggleMapWeatherFlip('weather')" id="btnViewWeather" class="px-2.5 py-1 rounded color-sub hover:color-main cursor-pointer transition-all">RADAR LAUT</button>
                          </div>
 
                          <!-- Fullscreen Map -->
-                         <button onclick="toggleAppFullscreen()" id="btnAppFullscreen" class="px-2.5 py-1.5 bg-gradient-to-r from-cyan-700 to-blue-700 hover:from-cyan-600 hover:to-blue-600 text-white rounded border border-cyan-400/50 cursor-pointer text-[13px] font-mono font-bold flex items-center gap-1.5 shadow-sm transition-all" title="Mode Layar Penuh Peta (Fullscreen Map Mode)">
+                         <button onclick="toggleAppFullscreen()" id="btnAppFullscreen" class="px-2.5 py-1.5 bg-gradient-to-r from-cyan-700 to-blue-700 hover:from-cyan-600 hover:to-blue-600 text-white rounded border border-cyan-400/50 cursor-pointer text-[10px] font-mono font-bold flex items-center gap-1.5 shadow-sm transition-all" title="Mode Layar Penuh Peta (Fullscreen Map Mode)">
                              <i class="fa-solid fa-expand" id="iconFullscreen"></i>
                              <span id="textFullscreenBtn">FULLSCREEN</span>
                          </button>
@@ -751,21 +750,21 @@
                             <div class="absolute top-3 left-3 z-[400] flex items-center bg-slate-900/90 border border-cyan-500/60 rounded-lg p-1.5 shadow-xl backdrop-blur-md">
                                 <i class="fa-solid fa-magnifying-glass text-cyan-400 px-2 text-xs"></i>
                                 <input type="text" id="citySearchInput" placeholder="Cari Wilayah / Sesar (cth: Padang, Palu, Mentawai)" class="bg-transparent text-white font-mono text-[11px] focus:outline-none w-52 sm:w-64 font-bold placeholder-slate-500" oninput="filterCitySearch('citySearchInput', 'searchSuggestions')" onkeydown="if(event.key==='Enter') executeUniversalSearch('citySearchInput', 'searchSuggestions')">
-                                <button onclick="executeUniversalSearch('citySearchInput', 'searchSuggestions')" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded text-[13px] font-black cursor-pointer transition-colors shadow">CARI</button>
+                                <button onclick="executeUniversalSearch('citySearchInput', 'searchSuggestions')" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded text-[10px] font-black cursor-pointer transition-colors shadow">CARI</button>
                                 <div id="searchSuggestions" class="absolute left-0 right-0 top-full mt-1 bg-slate-950 border-2 border-slate-700 rounded-lg overflow-hidden max-h-40 overflow-y-auto hidden z-30 shadow-2xl"></div>
                             </div>
 
                             <!-- Map Overlay Controls -->
                             <div class="absolute top-3 right-3 z-[400] flex flex-col gap-1.5">
-                                <button onclick="toggleFaultLinesLayer()" id="btnToggleFaults" class="p-1.5 px-2.5 bg-slate-900/90 border border-rose-500/60 text-rose-400 rounded-lg text-[12px] font-mono font-bold hover:bg-rose-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Aktifkan/Nonaktifkan Garis Patahan & Sesar Aktif">
+                                <button onclick="toggleFaultLinesLayer()" id="btnToggleFaults" class="p-1.5 px-2.5 bg-slate-900/90 border border-rose-500/60 text-rose-400 rounded-lg text-[9px] font-mono font-bold hover:bg-rose-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Aktifkan/Nonaktifkan Garis Patahan & Sesar Aktif">
                                     <i class="fa-solid fa-bolt"></i> <span>SESAR ON</span>
                                 </button>
 
-                                <button onclick="toggleSensorsLayer()" id="btnToggleSensors" class="p-1.5 px-2.5 bg-slate-900/90 border border-emerald-500/60 text-emerald-400 rounded-lg text-[12px] font-mono font-bold hover:bg-emerald-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Aktifkan/Nonaktifkan Stasiun Sensor InaTEWS">
+                                <button onclick="toggleSensorsLayer()" id="btnToggleSensors" class="p-1.5 px-2.5 bg-slate-900/90 border border-emerald-500/60 text-emerald-400 rounded-lg text-[9px] font-mono font-bold hover:bg-emerald-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Aktifkan/Nonaktifkan Stasiun Sensor InaTEWS">
                                     <i class="fa-solid fa-tower-cell"></i> <span>SENSOR ON</span>
                                 </button>
 
-                                <button onclick="resetMapView()" class="p-1.5 px-2.5 bg-slate-900/90 border border-amber-500/60 text-amber-400 rounded-lg text-[12px] font-mono font-bold hover:bg-amber-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Kembalikan Tampilan Peta Fokus ke Nusantara Indonesia">
+                                <button onclick="resetMapView()" class="p-1.5 px-2.5 bg-slate-900/90 border border-amber-500/60 text-amber-400 rounded-lg text-[9px] font-mono font-bold hover:bg-amber-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg" title="Kembalikan Tampilan Peta Fokus ke Nusantara Indonesia">
                                     <i class="fa-solid fa-location-crosshairs"></i> <span>FOKUS PETA</span>
                                 </button>
                             </div>
@@ -775,7 +774,7 @@
                             
                             <!-- Telemetry Bottom Overlay -->
                             <div class="absolute bottom-3 left-3 z-[400] pointer-events-none">
-                                <div class="text-[13px] font-mono font-bold color-main bg-slate-900/85 p-2 rounded-lg backdrop-blur-md shadow-lg border border-cyan-500/40">
+                                <div class="text-[10px] font-mono font-bold color-main bg-slate-900/85 p-2 rounded-lg backdrop-blur-md shadow-lg border border-cyan-500/40">
                                     <div class="text-cyan-400 flex items-center gap-1.5">
                                         <i class="fa-solid fa-satellite text-amber-400 animate-pulse"></i> 
                                         <span>INATEWS SEISMIC SENSORS</span>
@@ -789,7 +788,7 @@
 
                         <!-- BELAKANG: EMBEDDED WINDY WAVE & MARITIME RADAR -->
                         <div class="flip-back border-2 border-amber-500/70 shadow-2xl bg-[#020617] rounded-xl overflow-hidden relative" id="backWeatherHolder">
-                            <iframe id="dashboardWeatherIframe" class="w-full h-full rounded-xl block" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=default&metricWind=default&zoom=4&overlay=waves&product=ecmwf&level=surface&lat=-2.5&lon=118.0&marker=false" frameborder="0" title="Radar Gelombang Laut & Cuaca Maritim Windy"></iframe>
+                            <iframe id="dashboardWeatherIframe" class="w-full h-full rounded-xl block" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=waves&product=ecmwf&level=surface&lat=-2.5&lon=118.0" frameborder="0" title="Radar Gelombang Laut & Cuaca Maritim Windy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -800,17 +799,17 @@
                         <h3 class="font-tech text-xs font-black text-cyan-400 uppercase tracking-wider">
                             <i class="fa-solid fa-microchip text-slate-400 mr-1"></i> 4 Pilar Subsistem Deteksi Dini InaTEWS
                         </h3>
-                        <span class="text-[12px] font-mono text-slate-400">KLIK PILAR UNTUK DETAIL</span>
+                        <span class="text-[9px] font-mono text-slate-400">KLIK PILAR UNTUK DETAIL</span>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-2">
-                        <button onclick="switchPilar(1)" id="btn-pilar-1" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border-2 border-cyan-500 bg-cyan-950 text-cyan-400 font-black cursor-pointer transition-all">1. SEISMOMETER</button>
-                        <button onclick="switchPilar(2)" id="btn-pilar-2" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">2. TIDE GAUGE</button>
-                        <button onclick="switchPilar(3)" id="btn-pilar-3" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">3. INABUOY OBPR</button>
-                        <button onclick="switchPilar(4)" id="btn-pilar-4" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">4. HF RADAR</button>
+                        <button onclick="switchPilar(1)" id="btn-pilar-1" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border-2 border-cyan-500 bg-cyan-950 text-cyan-400 font-black cursor-pointer transition-all">1. SEISMOMETER</button>
+                        <button onclick="switchPilar(2)" id="btn-pilar-2" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">2. TIDE GAUGE</button>
+                        <button onclick="switchPilar(3)" id="btn-pilar-3" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">3. INABUOY OBPR</button>
+                        <button onclick="switchPilar(4)" id="btn-pilar-4" class="pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all">4. HF RADAR</button>
                     </div>
 
-                    <div id="pilar-content" class="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 text-[13px] font-mono text-slate-300 min-h-[48px]">
+                    <div id="pilar-content" class="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 text-[10px] font-mono text-slate-300 min-h-[48px]">
                         <b class="text-cyan-400 font-tech block mb-0.5">1. SEISMOMETER KEBENCANAAN NETWORK</b>
                         Sensor fisis pencatat rambatan gelombang P-Wave &amp; S-Wave guna mengalkulasi magnitudo dan episentrum gempa secara otomatis dalam &lt; 3 menit.
                     </div>
@@ -826,7 +825,7 @@
                         <h2 class="font-tech text-xs md:text-sm font-black text-cyan-400 flex items-center gap-1.5 uppercase tracking-wider">
                             <i class="fa-solid fa-sliders text-amber-400"></i> Simulator Seismik
                         </h2>
-                        <span class="text-[12px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">ATENUASI PGA</span>
+                        <span class="text-[9px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">ATENUASI PGA</span>
                     </div>
 
                     <div class="bg-inner-box p-2.5 rounded-xl text-[11px] font-mono font-bold space-y-2">
@@ -848,8 +847,8 @@
 
                         <div class="grid grid-cols-2 gap-1.5">
                             <div>
-                                <label class="block text-[12px] text-slate-400 mb-0.5">MEKANISME PATAHAN:</label>
-                                <select id="select-fault" onchange="jalankanKalkulasiDinamis();" class="w-full bg-slate-900 border border-slate-700 text-white rounded p-1 text-[13px] font-bold focus:outline-none">
+                                <label class="block text-[9px] text-slate-400 mb-0.5">MEKANISME PATAHAN:</label>
+                                <select id="select-fault" onchange="jalankanKalkulasiDinamis();" class="w-full bg-slate-900 border border-slate-700 text-white rounded p-1 text-[10px] font-bold focus:outline-none">
                                     <option value="thrust">Thrust (Sesar Naik)</option>
                                     <option value="normal">Normal (Sesar Turun)</option>
                                     <option value="strike">Strike-Slip (Mendatar)</option>
@@ -857,8 +856,8 @@
                             </div>
 
                             <div>
-                                <label class="block text-[12px] text-slate-400 mb-0.5">KELAS SITUS TANAH:</label>
-                                <select id="select-soil" onchange="jalankanKalkulasiDinamis();" class="w-full bg-slate-900 border border-slate-700 text-white rounded p-1 text-[13px] font-bold focus:outline-none">
+                                <label class="block text-[9px] text-slate-400 mb-0.5">KELAS SITUS TANAH:</label>
+                                <select id="select-soil" onchange="jalankanKalkulasiDinamis();" class="w-full bg-slate-900 border border-slate-700 text-white rounded p-1 text-[10px] font-bold focus:outline-none">
                                     <option value="SC">Tanah Keras (SC)</option>
                                     <option value="SD" selected>Tanah Sedang (SD)</option>
                                     <option value="SE">Tanah Lunak (SE)</option>
@@ -867,7 +866,7 @@
                         </div>
 
                         <!-- Hasil Kalkulasi Geoteknik PGA & MMI -->
-                        <div class="grid grid-cols-3 gap-1 pt-1 text-center font-mono text-[12px]">
+                        <div class="grid grid-cols-3 gap-1 pt-1 text-center font-mono text-[9px]">
                             <div class="p-1.5 bg-slate-950 rounded border border-slate-800">
                                 <span class="text-slate-500 block">ESTIMASI PGA</span>
                                 <b class="text-emerald-400 text-[11px]" id="calc-pga-val">0.42 g</b>
@@ -878,59 +877,8 @@
                             </div>
                             <div class="p-1.5 bg-slate-950 rounded border border-slate-800">
                                 <span class="text-slate-500 block">LIKUIFAKSI</span>
-                                <b class="text-rose-400 text-[13px]" id="calc-liq-val">TINGGI</b>
+                                <b class="text-rose-400 text-[10px]" id="calc-liq-val">TINGGI</b>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- ADVANCED MULTI-METHOD SEISMIC ANALYSIS -->
-                <div class="pt-2 border-t border-theme">
-                    <div class="flex items-center justify-between mb-1.5">
-                        <span class="font-tech text-[13px] text-amber-400 font-black uppercase tracking-wider flex items-center gap-1.5">
-                            <i class="fa-solid fa-brain animate-pulse"></i> AI ALGORITHM ANALYSIS
-                        </span>
-                        <button onclick="runAdvancedAnalysis()" id="btnAdvAnalysis" class="px-2.5 py-1 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white rounded-lg text-[13px] font-tech font-black cursor-pointer transition-all shadow-md flex items-center gap-1.5">
-                            <i class="fa-solid fa-bolt"></i> RUN
-                        </button>
-                    </div>
-                    <div id="advAnalysisResults" class="space-y-1.5 max-h-[200px] overflow-y-auto pr-1">
-                        <div class="bg-inner-box p-2 rounded-lg border border-amber-500/30 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-amber-400 font-bold mb-0.5">
-                                <i class="fa-solid fa-wave-square"></i> <span>Boore-Atkinson 2008 (NGA)</span>
-                            </div>
-                            <div id="adv-boore" class="text-slate-300 leading-snug">Tekan RUN untuk menghitung estimasi PGA dengan model Ground Motion Prediction Equation (GMPE) NGA-West2.</div>
-                        </div>
-                        <div class="bg-inner-box p-2 rounded-lg border border-cyan-500/30 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-cyan-400 font-bold mb-0.5">
-                                <i class="fa-solid fa-chart-line"></i> <span>Campbell-Bozorgnia 2014</span>
-                            </div>
-                            <div id="adv-campbell" class="text-slate-300 leading-snug">Model atenuasi multi-parameter dengan koreksi efek basin dan nonlinear site response.</div>
-                        </div>
-                        <div class="bg-inner-box p-2 rounded-lg border border-emerald-500/30 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-emerald-400 font-bold mb-0.5">
-                                <i class="fa-solid fa-microscope"></i> <span>Probabilistic Seismic Hazard (PSHA)</span>
-                            </div>
-                            <div id="adv-psha" class="text-slate-300 leading-snug">Analisis bahaya seismik probabilistik dengan periode ulang 475 tahun (10% POE 50 thn).</div>
-                        </div>
-                        <div class="bg-inner-box p-2 rounded-lg border border-rose-500/30 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-rose-400 font-bold mb-0.5">
-                                <i class="fa-solid fa-tower-broadcast"></i> <span>Fukushima-Tanaka (FGC-98)</span>
-                            </div>
-                            <div id="adv-fukushima" class="text-slate-300 leading-snug">Model atenuasi Jepang yang disesuaikan untuk subduksi Indonesia.</div>
-                        </div>
-                        <div class="bg-inner-box p-2 rounded-lg border border-indigo-500/30 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-indigo-400 font-bold mb-0.5">
-                                <i class="fa-solid fa-flask"></i> <span>Makroseismic Intensity (MMI)</span>
-                            </div>
-                            <div id="adv-mmi" class="text-slate-300 leading-snug">Konversi magnitudo-kedalaman ke skala intensitas MMI dengan koreksi geometri epi-pusat.</div>
-                        </div>
-                        <div class="bg-gradient-to-r from-slate-900 to-indigo-950 p-2 rounded-lg border border-indigo-500/40 text-[13px] font-mono">
-                            <div class="flex items-center gap-1.5 text-indigo-300 font-bold mb-0.5">
-                                <i class="fa-solid fa-shield-halved text-emerald-400"></i> <span>SEISMIC RISK MATRIX</span>
-                            </div>
-                            <div id="adv-risk" class="text-slate-300 leading-snug">Matriks risiko terintegrasi: PGA + Likuifaksi + Tsunami + Intensitas = Skor Bahaya Komposit.</div>
                         </div>
                     </div>
                 </div>
@@ -941,10 +889,10 @@
                         <h3 class="font-tech text-xs font-black text-cyan-400 uppercase tracking-wider">
                             <i class="fa-solid fa-satellite-dish animate-pulse text-emerald-400 mr-1"></i> Gempa Terkini (BMKG Feed)
                         </h3>
-                        <span class="text-[11px] font-mono text-emerald-400">AUTOMATIC FEED</span>
+                        <span class="text-[8px] font-mono text-emerald-400">AUTOMATIC FEED</span>
                     </div>
 
-                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 space-y-1.5 font-mono text-[13px] text-slate-300 shrink-0">
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 space-y-1.5 font-mono text-[10px] text-slate-300 shrink-0">
                         <div class="flex justify-between items-center border-b border-slate-800/80 pb-1">
                             <span class="text-slate-400">Waktu Gempa:</span>
                             <span id="quake-time" class="text-white font-bold">-</span>
@@ -969,21 +917,21 @@
 
                     <!-- Status Diseminasi Tsunami Card -->
                     <div id="tsunamiStatusCard" class="p-3 bg-slate-950 border-2 border-theme rounded-xl text-center flex flex-col justify-center items-center shadow-sm flex-1">
-                        <span class="text-[12px] font-tech text-slate-400 block font-bold uppercase tracking-wider">STATUS DISEMINASI BERITA BMKG</span>
+                        <span class="text-[9px] font-tech text-slate-400 block font-bold uppercase tracking-wider">STATUS DISEMINASI BERITA BMKG</span>
                         <div id="tsunami-icon" class="my-1 text-2xl text-slate-400"><i class="fa-solid fa-wave-square"></i></div>
                         <span id="tsunami-status-text" class="font-tech text-xs font-black text-slate-300 tracking-wide uppercase leading-tight">NORMAL - TIDAK BERPOTENSI TSUNAMI</span>
                     </div>
 
                     <!-- TOMBOL FEED BMKG LIVE & ARSIP SEJARAH DIBAWAH STATUS DISEMINASI -->
                     <div class="grid grid-cols-2 gap-2 pt-1 shrink-0" title="Akses Cepat Data Live BMKG & Arsip Sejarah">
-                        <button onclick="toggleFloatingWidget('bmkgLiveWidget')" class="p-2.5 bg-slate-950 hover:bg-slate-900 border-2 border-cyan-500 rounded-xl flex items-center justify-center gap-1.5 text-white shadow-md cursor-pointer hover:border-cyan-400 hover:scale-[1.02] active:scale-95 transition-all text-[13px] font-tech font-black uppercase tracking-wider" title="Buka Daftar Feed Gempa Terkini Real-Time BMKG (M 5.0+)">
+                        <button onclick="toggleFloatingWidget('bmkgLiveWidget')" class="p-2.5 bg-slate-950 hover:bg-slate-900 border-2 border-cyan-500 rounded-xl flex items-center justify-center gap-1.5 text-white shadow-md cursor-pointer hover:border-cyan-400 hover:scale-[1.02] active:scale-95 transition-all text-[10px] font-tech font-black uppercase tracking-wider" title="Buka Daftar Feed Gempa Terkini Real-Time BMKG (M 5.0+)">
                             <span class="relative flex h-2.5 w-2.5 shrink-0">
                               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
                             </span>
                             <span class="truncate">FEED BMKG LIVE</span>
                         </button>
-                        <button onclick="toggleFloatingWidget('sejarahGempaWidget')" class="p-2.5 bg-slate-950 hover:bg-slate-900 border-2 border-amber-500 rounded-xl flex items-center justify-center gap-1.5 text-white shadow-md cursor-pointer hover:border-amber-400 hover:scale-[1.02] active:scale-95 transition-all text-[13px] font-tech font-black uppercase tracking-wider" title="Buka Katalog Peristiwa Gempa Bumi Bersejarah Nusantara">
+                        <button onclick="toggleFloatingWidget('sejarahGempaWidget')" class="p-2.5 bg-slate-950 hover:bg-slate-900 border-2 border-amber-500 rounded-xl flex items-center justify-center gap-1.5 text-white shadow-md cursor-pointer hover:border-amber-400 hover:scale-[1.02] active:scale-95 transition-all text-[10px] font-tech font-black uppercase tracking-wider" title="Buka Katalog Peristiwa Gempa Bumi Bersejarah Nusantara">
                             <i class="fa-solid fa-clock-rotate-left text-amber-400 text-xs shrink-0"></i> 
                             <span class="truncate">ARSIP SEJARAH</span>
                         </button>
@@ -998,7 +946,7 @@
                 <h3 class="font-tech text-xs font-black text-cyan-400 mb-2 flex items-center gap-1.5">
                     <i class="fa-solid fa-shield-halved text-emerald-400"></i> Prosedur Keselamatan Gempa &amp; Tsunami
                 </h3>
-                <ul class="font-mono text-[13px] font-medium color-sub space-y-1 list-none">
+                <ul class="font-mono text-[10px] font-medium color-sub space-y-1 list-none">
                     <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Drop, Cover, and Hold On saat guncangan berlangsung.</li>
                     <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Evakuasi mandiri segera jika berada di tepi pantai pascagempa.</li>
                     <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Ikuti arahan resmi jalur evakuasi BPBD / BMKG setempat.</li>
@@ -1009,18 +957,18 @@
                 <h3 class="font-tech text-xs font-black text-cyan-400 mb-2 flex items-center gap-1.5">
                     <i class="fa-solid fa-building-columns text-indigo-400"></i> Otoritas &amp; Lembaga Riset
                 </h3>
-                <div class="grid grid-cols-2 gap-2 font-mono text-[13px] font-bold">
+                <div class="grid grid-cols-2 gap-2 font-mono text-[10px] font-bold">
                     <a href="https://www.bmkg.go.id" target="_blank" class="p-1.5 bg-inner-box border border-theme rounded text-amber-300 hover:bg-amber-950/40 transition flex items-center justify-between">
-                        <span>BMKG Indonesia</span> <i class="fa-solid fa-arrow-up-right-from-square text-[12px]"></i>
+                        <span>BMKG Indonesia</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
                     <a href="https://bnpb.go.id" target="_blank" class="p-1.5 bg-inner-box border border-theme rounded text-orange-300 hover:bg-orange-950/40 transition flex items-center justify-between">
-                        <span>BNPB Bencana</span> <i class="fa-solid fa-arrow-up-right-from-square text-[12px]"></i>
+                        <span>BNPB Bencana</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
                     <a href="https://vsi.esdm.go.id" target="_blank" class="p-1.5 bg-inner-box border border-theme rounded text-rose-300 hover:bg-rose-950/40 transition flex items-center justify-between">
-                        <span>PVMBG Geologi</span> <i class="fa-solid fa-arrow-up-right-from-square text-[12px]"></i>
+                        <span>PVMBG Geologi</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
                     <a href="https://brin.go.id" target="_blank" class="p-1.5 bg-inner-box border border-theme rounded text-cyan-300 hover:bg-cyan-950/40 transition flex items-center justify-between">
-                        <span>BRIN Riset</span> <i class="fa-solid fa-arrow-up-right-from-square text-[12px]"></i>
+                        <span>BRIN Riset</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
                 </div>
             </div>
@@ -1030,11 +978,11 @@
                     <h3 class="font-tech text-xs font-black text-cyan-400 mb-1 flex items-center gap-1.5">
                         <i class="fa-solid fa-terminal text-fuchsia-400"></i> InaTEWS Pro v4.0 Spatial Engine
                     </h3>
-                    <p class="font-mono text-[13px] color-sub">
+                    <p class="font-mono text-[10px] color-sub">
                         Dikonstruksi oleh <b class="text-fuchsia-400">Mohamad Hartadi</b>. Sistem peringatan dini kebencanaan gempa bumi, tsunami, analisis dinamika tanah geoteknik, dan kecerdasan artifisial.
                     </p>
                 </div>
-                <div class="mt-2 text-[12px] font-mono text-slate-500">
+                <div class="mt-2 text-[9px] font-mono text-slate-500">
                     &copy; 2026 Mohamad Hartadi &bull; InaTEWS Pro v4.0 &bull; Multi-Method GMPE Analysis Engine &bull; All Rights Reserved.
                 </div>
             </div>
@@ -1077,16 +1025,16 @@
                 <i class="fa-solid fa-cloud-sun-rain text-cyan-400 text-lg animate-pulse"></i>
                 <div>
                     <h4 class="font-tech text-xs font-black text-cyan-300 tracking-wide uppercase">ANALISIS METEOROLOGI &amp; IKLIM</h4>
-                    <span class="text-[12px] font-mono text-emerald-400 block font-bold">● SIMULATOR MUSON &amp; ENSO INTERAKTIF</span>
+                    <span class="text-[9px] font-mono text-emerald-400 block font-bold">● SIMULATOR MUSON &amp; ENSO INTERAKTIF</span>
                 </div>
             </div>
             <button onclick="toggleMonsoonInterface()" class="text-slate-400 hover:text-red-400 p-1 cursor-pointer"><i class="fa-solid fa-xmark text-lg"></i></button>
         </div>
         <div class="p-4 font-mono text-xs space-y-3.5 max-h-[480px] overflow-y-auto text-slate-200 bg-slate-950/90">
             <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 text-center">
-                <span class="text-[12px] text-slate-400 font-tech font-black tracking-widest block mb-0.5">MONSOON PREDICTION INDEX (MPI)</span>
+                <span class="text-[9px] text-slate-400 font-tech font-black tracking-widest block mb-0.5">MONSOON PREDICTION INDEX (MPI)</span>
                 <span id="mpi-score-display" class="font-tech text-3xl font-black text-cyan-400 glow-text">84%</span>
-                <span id="mpi-status-display" class="block text-[13px] font-bold text-emerald-400 mt-1 uppercase tracking-wide">INTENSITAS MUSON TIMUR MAPAN (KEMARAU)</span>
+                <span id="mpi-status-display" class="block text-[10px] font-bold text-emerald-400 mt-1 uppercase tracking-wide">INTENSITAS MUSON TIMUR MAPAN (KEMARAU)</span>
             </div>
             
             <div class="space-y-2.5 text-[11px]">
@@ -1123,7 +1071,7 @@
                 <div>
                     <div class="flex justify-between text-[11px] mb-1 items-center font-bold">
                         <span class="text-slate-400">STATUS ENSO PASIFIK</span>
-                        <span id="val-enso" class="text-blue-400 font-tech uppercase text-[13px]">LA NIÑA (-1.71)</span>
+                        <span id="val-enso" class="text-blue-400 font-tech uppercase text-[10px]">LA NIÑA (-1.71)</span>
                     </div>
                     <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-700 relative">
                         <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-400 z-10"></div>
@@ -1132,11 +1080,16 @@
                 </div>
             </div>
             
-            <div class="pt-2 border-t border-slate-800 space-y-1 text-[11px] font-bold">
-                <div class="flex justify-between">
+            <div class="pt-2.5 border-t border-slate-800 space-y-2.5 text-[11px] font-bold">
+                <div class="flex justify-between items-center">
                     <span class="text-slate-400">KONDISI CUACA REGIONAL:</span>
                     <span id="val-cuaca" class="text-white font-tech uppercase">CERAH BERAWAN</span>
                 </div>
+                <a href="https://adikds.github.io/MONITORING-PREDIKSI-ANGIN-MUSON-INDONESIA/" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:via-blue-500 hover:to-indigo-500 text-white rounded-xl font-tech font-bold text-xs flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all cursor-pointer group uppercase tracking-wider" title="Buka Sistem Monitoring & Prediksi Angin Muson Indonesia">
+                    <i class="fa-solid fa-wind text-cyan-200 group-hover:scale-110 transition-transform"></i>
+                    <span>CUACA ANALYSIS</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-cyan-200 ml-1"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -1173,7 +1126,7 @@
                 </div>
                 <div>
                     <h4 class="font-tech text-xs font-black text-cyan-300 tracking-wider uppercase">InaTEWS AI SEISMO COPILOT</h4>
-                    <span class="text-[12px] font-mono text-emerald-400 block font-bold">● GEMINI &amp; WIKIPEDIA KERNEL ACTIVE</span>
+                    <span class="text-[9px] font-mono text-emerald-400 block font-bold">● GEMINI &amp; WIKIPEDIA KERNEL ACTIVE</span>
                 </div>
             </div>
             <div class="flex items-center gap-1.5">
@@ -1183,7 +1136,7 @@
         </div>
 
         <!-- Chat Time Bar -->
-        <div class="bg-slate-900/90 px-3.5 py-1.5 border-b border-slate-800 flex justify-between items-center font-mono text-[12px] font-bold text-slate-300 shrink-0">
+        <div class="bg-slate-900/90 px-3.5 py-1.5 border-b border-slate-800 flex justify-between items-center font-mono text-[9px] font-bold text-slate-300 shrink-0">
             <span id="chat-top-day">-</span>
             <span class="text-emerald-400"><i class="fa-brands fa-wikipedia-w mr-1"></i>Wiki &amp; Google Synced</span>
             <span id="chat-top-clock" class="text-cyan-400 font-mono">00:00:00 WIB</span>
@@ -1192,7 +1145,7 @@
         <!-- Chat Messages Container -->
         <div id="chatMessages" class="flex-1 p-3.5 overflow-y-auto space-y-3 font-sans text-xs color-main bg-inner-box font-medium leading-relaxed">
             <div class="bg-[var(--bg-card)] p-3 rounded-xl border border-theme max-w-[95%] font-medium shadow-sm">
-                <span class="text-cyan-400 font-mono text-[13px] block font-black mb-1 flex items-center gap-1.5">
+                <span class="text-cyan-400 font-mono text-[10px] block font-black mb-1 flex items-center gap-1.5">
                     <i class="fa-solid fa-terminal text-cyan-500"></i> InaTEWS KERNEL INTELLIGENCE READY:
                 </span>
                 Konsol seismologi cerdas aktif. Anda dapat menanyakan analisis kekuatan gempa terkini, evaluasi bahaya likuifaksi &amp; PGA geoteknik, protokol mitigasi 20-20-20, data gempa historis, atau mencari penjelasan ilmiah ensiklopedia Wikipedia &amp; Google.
@@ -1201,38 +1154,31 @@
 
         <!-- Chat Shortcut Pills -->
         <div class="p-2.5 bg-[var(--bg-card)] border-t border-theme flex flex-wrap gap-1.5 justify-center shrink-0">
-            <button onclick="triggerChatShortcut('creator')" class="px-2.5 py-1 bg-gradient-to-r from-fuchsia-950 to-pink-950 border border-fuchsia-500/80 rounded-lg text-[12px] font-black text-fuchsia-300 hover:from-fuchsia-800 hover:to-pink-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Data Lengkap Programmer Pengembang (Mohamad Hartadi)">
+            <button onclick="triggerChatShortcut('creator')" class="px-2.5 py-1 bg-gradient-to-r from-fuchsia-950 to-pink-950 border border-fuchsia-500/80 rounded-lg text-[9px] font-black text-fuchsia-300 hover:from-fuchsia-800 hover:to-pink-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Data Lengkap Programmer Pengembang (Mohamad Hartadi)">
                 👨‍💻 <span>Creator Data</span>
             </button>
-            <button onclick="triggerChatShortcut('my_aplikasi')" class="px-2.5 py-1 bg-gradient-to-r from-indigo-950 to-purple-950 border border-indigo-500/80 rounded-lg text-[12px] font-black text-indigo-300 hover:from-indigo-800 hover:to-purple-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Direktori 38 Portofolio Aplikasi Ekosistem">
+            <button onclick="triggerChatShortcut('my_aplikasi')" class="px-2.5 py-1 bg-gradient-to-r from-indigo-950 to-purple-950 border border-indigo-500/80 rounded-lg text-[9px] font-black text-indigo-300 hover:from-indigo-800 hover:to-purple-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Direktori 38 Portofolio Aplikasi Ekosistem">
                 🚀 <span>My Aplikasi</span>
             </button>
-            <button onclick="triggerChatShortcut('analisa_gempa')" class="px-2.5 py-1 bg-gradient-to-r from-cyan-950 to-blue-950 border border-cyan-500/80 rounded-lg text-[12px] font-black text-cyan-300 hover:from-cyan-800 hover:to-blue-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Analisis Seismik & Geoteknik PGA / Likuifaksi">
+            <button onclick="triggerChatShortcut('algoritma_analysis')" class="px-2.5 py-1 bg-gradient-to-r from-amber-950 to-orange-950 border border-amber-500/80 rounded-lg text-[9px] font-black text-amber-300 hover:from-amber-800 hover:to-orange-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Algoritma Analysis Multi-Metode GMPE & PSHA Seismik">
+                ⚡ <span>Algoritma Analysis</span>
+            </button>
+            <button onclick="triggerChatShortcut('analisa_gempa')" class="px-2.5 py-1 bg-gradient-to-r from-cyan-950 to-blue-950 border border-cyan-500/80 rounded-lg text-[9px] font-black text-cyan-300 hover:from-cyan-800 hover:to-blue-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Analisis Seismik & Geoteknik PGA / Likuifaksi">
                 📊 <span>Analisa Gempa &amp; PGA</span>
             </button>
-            <button onclick="triggerChatShortcut('tsunami_eta')" class="px-2.5 py-1 bg-gradient-to-r from-rose-950 to-red-950 border border-rose-500/80 rounded-lg text-[12px] font-black text-rose-300 hover:from-rose-800 hover:to-red-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Kalkulasi Kecepatan & Waktu Tiba Tsunami">
+            <button onclick="triggerChatShortcut('tsunami_eta')" class="px-2.5 py-1 bg-gradient-to-r from-rose-950 to-red-950 border border-rose-500/80 rounded-lg text-[9px] font-black text-rose-300 hover:from-rose-800 hover:to-red-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Kalkulasi Kecepatan & Waktu Tiba Tsunami">
                 🌊 <span>Simulasi Tsunami</span>
             </button>
-            <button onclick="triggerChatShortcut('mitigasi')" class="px-2.5 py-1 bg-gradient-to-r from-emerald-950 to-teal-950 border border-emerald-500/80 rounded-lg text-[12px] font-black text-emerald-300 hover:from-emerald-800 hover:to-teal-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Protokol Mitigasi 20-20-20 & Keamanan Struktur">
+            <button onclick="triggerChatShortcut('mitigasi')" class="px-2.5 py-1 bg-gradient-to-r from-emerald-950 to-teal-950 border border-emerald-500/80 rounded-lg text-[9px] font-black text-emerald-300 hover:from-emerald-800 hover:to-teal-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Protokol Mitigasi 20-20-20 & Keamanan Struktur">
                 🛡️ <span>Mitigasi 20-20-20</span>
             </button>
-            <button onclick="triggerChatShortcut('cuaca_muson')" class="px-2.5 py-1 bg-gradient-to-r from-amber-950 to-orange-950 border border-amber-500/80 rounded-lg text-[12px] font-black text-amber-300 hover:from-amber-800 hover:to-orange-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Prediksi Muson, ENSO & Gelombang Laut">
+            <button onclick="triggerChatShortcut('cuaca_muson')" class="px-2.5 py-1 bg-gradient-to-r from-blue-950 to-cyan-950 border border-blue-500/80 rounded-lg text-[9px] font-black text-blue-300 hover:from-blue-800 hover:to-cyan-800 hover:text-white transition-all cursor-pointer shadow-sm flex items-center gap-1" title="Prediksi Muson, ENSO & Gelombang Laut">
                 ⛈️ <span>Muson &amp; ENSO</span>
             </button>
         </div>
 
         <!-- Chat Input Form -->
-        
-                    <!-- QUICK ANALYSIS BUTTONS -->
-                    <div class="flex flex-wrap gap-1.5 px-1 pb-1.5 border-b border-theme">
-                        <button onclick="quickChatAction('analisa')" class="px-2 py-1 bg-cyan-950 hover:bg-cyan-900 border border-cyan-500/40 text-cyan-400 rounded-lg text-[13px] font-mono font-bold transition-all hover:scale-105"><i class="fa-solid fa-chart-simple mr-1"></i>Analisa PGA</button>
-                        <button onclick="quickChatAction('tsunami')" class="px-2 py-1 bg-red-950 hover:bg-red-900 border border-red-500/40 text-red-400 rounded-lg text-[13px] font-mono font-bold transition-all hover:scale-105"><i class="fa-solid fa-water mr-1"></i>Tsunami</button>
-                        <button onclick="quickChatAction('aplikasi')" class="px-2 py-1 bg-indigo-950 hover:bg-indigo-900 border border-indigo-500/40 text-indigo-400 rounded-lg text-[13px] font-mono font-bold transition-all hover:scale-105"><i class="fa-solid fa-grip mr-1"></i>Apps</button>
-                        <button onclick="quickChatAction('programmer')" class="px-2 py-1 bg-fuchsia-950 hover:bg-fuchsia-900 border border-fuchsia-500/40 text-fuchsia-400 rounded-lg text-[13px] font-mono font-bold transition-all hover:scale-105"><i class="fa-solid fa-laptop-code mr-1"></i>Dev</button>
-                        <button onclick="runAdvancedAnalysis(); toggleChatWindow();" class="px-2 py-1 bg-amber-950 hover:bg-amber-900 border border-amber-500/40 text-amber-400 rounded-lg text-[13px] font-mono font-bold transition-all hover:scale-105"><i class="fa-solid fa-bolt mr-1"></i>AI Analysis</button>
-                    </div>
-
-                    <div class="p-2.5 bg-[var(--bg-card)] border-t border-theme flex gap-2 shrink-0">
+        <div class="p-2.5 bg-[var(--bg-card)] border-t border-theme flex gap-2 shrink-0">
             <button id="micBtn" onclick="startVoiceRecognition()" title="Perintah Suara (Voice Input)" class="bg-slate-950 border border-slate-700 hover:bg-slate-800 text-cyan-400 px-3.5 rounded-xl text-sm font-bold cursor-pointer flex items-center justify-center transition-colors shadow">
                 <i class="fa-solid fa-microphone"></i>
             </button>
@@ -1243,7 +1189,7 @@
         </div>
     </div>
 
-    <!-- MODAL: CREATOR PROFILE -->
+        <!-- MODAL: CREATOR PROFILE -->
     <div id="creatorModal" class="fixed inset-0 z-[10005] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 select-none" onclick="if(event.target===this) closeCreatorModal()">
         <div class="bg-slate-900 border-2 border-fuchsia-500 rounded-2xl w-full max-w-md p-5 sm:p-6 shadow-[0_0_50px_rgba(236,72,153,0.5)] relative">
             <button onclick="closeCreatorModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl cursor-pointer transition-colors"><i class="fa-solid fa-xmark"></i></button>
@@ -1259,33 +1205,43 @@
                 </div>
 
                 <h3 class="text-lg sm:text-xl font-black font-tech text-fuchsia-400 tracking-wider">MOHAMAD HARTADI</h3>
-                <p class="text-[13px] font-mono font-bold text-slate-400 mt-0.5 uppercase tracking-widest">Lead System Architect &amp; Civil Engineer</p>
-                <span class="text-[12px] font-mono text-cyan-400 mt-1">Geotechnical Engineering &amp; Seismic Hazard Computing Specialist</span>
+                <p class="text-[10px] font-mono font-bold text-slate-400 mt-0.5 uppercase tracking-widest">Lead System Architect &amp; Civil Engineer</p>
+                <span class="text-[9px] font-mono text-cyan-400 mt-1">Geotechnical Engineering &amp; Seismic Hazard Computing Specialist</span>
             </div>
             
-            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-2.5 font-mono text-xs font-bold text-slate-200">
-                <a href="https://wa.me/6282231036047?text=Halo%20Mohamad%20Hartadi%20InaTEWS" target="_blank" class="flex items-center gap-3 hover:bg-slate-800 p-2.5 rounded-lg transition-colors group">
-                    <i class="fa-brands fa-whatsapp text-emerald-400 text-xl w-6 text-center group-hover:scale-110 transition-transform"></i>
-                    <div class="flex-1">
-                        <span class="block text-[11px] text-slate-500 mb-0.5">KONTAK WHATSAPP RESMI</span>
-                        <span class="text-emerald-400 group-hover:underline text-[11px]">082231036047</span>
+            <!-- Link Kontak & Media Sosial (Sesuai Desain Foto) -->
+            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-2.5 font-mono">
+                <a href="https://wa.me/6282231036047?text=Halo%20Mohamad%20Hartadi%20InaTEWS" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 hover:bg-slate-900 p-2.5 rounded-lg transition-colors group cursor-pointer border border-transparent hover:border-emerald-500/40">
+                    <div class="w-10 h-10 rounded-full bg-emerald-950/80 border border-emerald-500/60 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(16,185,129,0.3)] group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
                     </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold mb-0.5">KONTAK WHATSAPP RESMI</span>
+                        <span class="text-emerald-400 text-sm font-mono font-black tracking-wider group-hover:underline block">082231036047</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-emerald-400"></i>
                 </a>
                 
-                <a href="https://www.facebook.com/m.hartadi" target="_blank" class="flex items-center gap-3 hover:bg-slate-800 p-2.5 rounded-lg transition-colors group">
-                    <i class="fa-brands fa-facebook text-cyan-400 text-xl w-6 text-center group-hover:scale-110 transition-transform"></i>
-                    <div class="flex-1">
-                        <span class="block text-[11px] text-slate-500 mb-0.5">PROFIL FACEBOOK</span>
-                        <span class="text-cyan-400 group-hover:underline text-[11px]">facebook.com/m.hartadi</span>
+                <a href="https://www.facebook.com/m.hartadi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 hover:bg-slate-900 p-2.5 rounded-lg transition-colors group cursor-pointer border border-transparent hover:border-cyan-500/40">
+                    <div class="w-10 h-10 rounded-full bg-cyan-950/80 border border-cyan-500/60 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(6,182,212,0.3)] group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-facebook text-cyan-400 text-xl"></i>
                     </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold mb-0.5">PROFIL FACEBOOK</span>
+                        <span class="text-cyan-400 text-sm font-mono font-black tracking-wider group-hover:underline block truncate">facebook.com/m.hartadi</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyan-400"></i>
                 </a>
                 
-                <a href="https://newbieonline7.blogspot.com/" target="_blank" class="flex items-center gap-3 hover:bg-slate-800 p-2.5 rounded-lg transition-colors group">
-                    <i class="fa-solid fa-globe text-pink-400 text-xl w-6 text-center group-hover:scale-110 transition-transform"></i>
-                    <div class="flex-1">
-                        <span class="block text-[11px] text-slate-500 mb-0.5">PORTAL BLOG RESMI</span>
-                        <span class="text-pink-400 group-hover:underline text-[11px] break-all">newbieonline7.blogspot.com</span>
+                <a href="https://newbieonline7.blogspot.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 hover:bg-slate-900 p-2.5 rounded-lg transition-colors group cursor-pointer border border-transparent hover:border-pink-500/40">
+                    <div class="w-10 h-10 rounded-full bg-pink-950/80 border border-pink-500/60 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(236,72,153,0.3)] group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe text-pink-400 text-xl"></i>
                     </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold mb-0.5">PORTAL BLOG RESMI</span>
+                        <span class="text-pink-400 text-sm font-mono font-black tracking-wider group-hover:underline block truncate">newbieonline7.blogspot.com</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-pink-400"></i>
                 </a>
             </div>
         </div>
@@ -1296,7 +1252,7 @@
         <div class="bg-[var(--bg-card)] border-2 border-emerald-500 p-5 sm:p-6 rounded-2xl max-w-2xl w-full flex flex-col gap-3.5 shadow-2xl glass-panel max-h-[85vh] overflow-hidden">
             <div class="flex justify-between items-center border-b border-theme pb-2.5">
                 <h3 class="font-tech text-sm sm:text-base font-black text-emerald-400 tracking-widest uppercase flex items-center gap-2">
-                    <i class="fa-solid fa-book-journal-whills text-emerald-500"></i> PANDUAN PENGGUNA INATEWS PRO V3.0
+                    <i class="fa-solid fa-book-journal-whills text-emerald-500"></i> PANDUAN PENGGUNA INATEWS PRO V4.0
                 </h3>
                 <button onclick="closeHelpModal()" class="color-sub hover:text-red-400 cursor-pointer"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
@@ -1412,13 +1368,12 @@
 
         let loadedLiveFeeds = [];
         let selectedActiveCoordinates = [-6.45, 104.72];
-        const windyIframeUrl = "https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=default&metricWind=default&zoom=4&overlay=waves&product=ecmwf&level=surface&lat=-2.5&lon=118.0&marker=false";
+        const windyIframeUrl = "https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=waves&product=ecmwf&level=surface&lat=-2.5&lon=118.0";
 
         const baseMapProviders = {
             satellite: 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',
             dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
             terrain: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
-            terrainSubdomains: ['server', 'services'],
             street: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         };
 
@@ -1599,7 +1554,7 @@
                 sirenOsc1.start(); sirenOsc2.start();
                 isSirenPlaying = true;
 
-                document.getElementById('mainBtnSiren').className = "px-2.5 py-1.5 text-[13px] rounded font-tech font-black bg-red-600 text-white border border-red-400 cursor-pointer animate-pulse uppercase shadow-[0_0_15px_rgba(239,68,68,0.8)]";
+                document.getElementById('mainBtnSiren').className = "px-2.5 py-1.5 text-[10px] rounded font-tech font-black bg-red-600 text-white border border-red-400 cursor-pointer animate-pulse uppercase shadow-[0_0_15px_rgba(239,68,68,0.8)]";
             } catch(e) { console.error("Audio init error:", e); }
         }
 
@@ -1610,7 +1565,7 @@
                 if (sirenOsc2) { sirenOsc2.stop(); sirenOsc2.disconnect(); }
                 if (sirenGain) { sirenGain.disconnect(); }
                 isSirenPlaying = false;
-                document.getElementById('mainBtnSiren').className = "px-2.5 py-1.5 text-[13px] rounded font-tech font-black bg-blue-950 text-blue-400 border border-blue-800/60 hover:bg-blue-900 cursor-pointer uppercase";
+                document.getElementById('mainBtnSiren').className = "px-2.5 py-1.5 text-[10px] rounded font-tech font-black bg-blue-950 text-blue-400 border border-blue-800/60 hover:bg-blue-900 cursor-pointer uppercase";
             } catch(e) { console.error("Siren stop error:", e); }
         }
 
@@ -1666,20 +1621,7 @@
         function applyMapTileLayer(style) {
             if (!mapInstance) return;
             if (currentTileLayer) mapInstance.removeLayer(currentTileLayer);
-            const tileConfigs = {
-                satellite: { url: baseMapProviders.satellite, maxZoom: 20, subdomains: ['mt0','mt1','mt2','mt3'], attribution: '&copy; Google Maps' },
-                dark: { url: baseMapProviders.dark, maxZoom: 20, subdomains: ['a','b','c','d'], attribution: '&copy; CartoDB', detectRetina: true },
-                terrain: { url: baseMapProviders.terrain, maxZoom: 19, subdomains: ['server','services'], attribution: '&copy; Esri World Topo' },
-                street: { url: baseMapProviders.street, maxZoom: 19, subdomains: ['a','b','c'], attribution: '&copy; OpenStreetMap' }
-            };
-            const cfg = tileConfigs[style] || tileConfigs.satellite;
-            currentTileLayer = L.tileLayer(cfg.url, {
-                maxZoom: cfg.maxZoom,
-                subdomains: cfg.subdomains,
-                attribution: cfg.attribution,
-                detectRetina: cfg.detectRetina || false,
-                crossOrigin: true
-            }).addTo(mapInstance);
+            currentTileLayer = L.tileLayer(baseMapProviders[style], { maxZoom: 20, attribution: 'InaTEWS &copy; BMKG' }).addTo(mapInstance);
             currentActiveBasemap = style;
             updateBasemapButtonsVisual(style);
         }
@@ -1718,12 +1660,12 @@
             if (isFaultsVisible) {
                 mapInstance.removeLayer(faultLinesLayerGroup);
                 btn.innerHTML = '<i class="fa-solid fa-bolt"></i> <span>SESAR OFF</span>';
-                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-slate-600 text-slate-400 rounded-lg text-[12px] font-mono font-bold hover:bg-slate-800 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
+                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-slate-600 text-slate-400 rounded-lg text-[9px] font-mono font-bold hover:bg-slate-800 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
                 isFaultsVisible = false;
             } else {
                 mapInstance.addLayer(faultLinesLayerGroup);
                 btn.innerHTML = '<i class="fa-solid fa-bolt"></i> <span>SESAR ON</span>';
-                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-rose-500/60 text-rose-400 rounded-lg text-[12px] font-mono font-bold hover:bg-rose-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
+                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-rose-500/60 text-rose-400 rounded-lg text-[9px] font-mono font-bold hover:bg-rose-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
                 isFaultsVisible = true;
             }
         }
@@ -1746,7 +1688,7 @@
 
                 marker.bindTooltip(`
                     <div class="font-mono text-xs">
-                        <span class="text-[12px] font-bold block mb-0.5" style="color:${color}">● ${s.type}</span>
+                        <span class="text-[9px] font-bold block mb-0.5" style="color:${color}">● ${s.type}</span>
                         <strong class="text-white">${s.name} (${s.code})</strong>
                     </div>
                 `, { sticky: true });
@@ -1761,12 +1703,12 @@
             if (isSensorsVisible) {
                 mapInstance.removeLayer(sensorsLayerGroup);
                 btn.innerHTML = '<i class="fa-solid fa-tower-cell"></i> <span>SENSOR OFF</span>';
-                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-slate-600 text-slate-400 rounded-lg text-[12px] font-mono font-bold hover:bg-slate-800 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
+                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-slate-600 text-slate-400 rounded-lg text-[9px] font-mono font-bold hover:bg-slate-800 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
                 isSensorsVisible = false;
             } else {
                 mapInstance.addLayer(sensorsLayerGroup);
                 btn.innerHTML = '<i class="fa-solid fa-tower-cell"></i> <span>SENSOR ON</span>';
-                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-emerald-500/60 text-emerald-400 rounded-lg text-[12px] font-mono font-bold hover:bg-emerald-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
+                btn.className = "p-1.5 px-2.5 bg-slate-900/90 border border-emerald-500/60 text-emerald-400 rounded-lg text-[9px] font-mono font-bold hover:bg-emerald-950 backdrop-blur-md cursor-pointer flex items-center gap-1.5 shadow-lg";
                 isSensorsVisible = true;
             }
         }
@@ -1788,10 +1730,10 @@
             if (rulerPopup) { mapInstance.removeLayer(rulerPopup); rulerPopup = null; }
 
             if (isSeismicRulerActive) {
-                btn.className = "px-2 py-1 bg-emerald-600 text-white rounded border border-emerald-400 cursor-pointer text-[12px] font-mono font-bold flex items-center gap-1 shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-pulse";
+                btn.className = "px-2 py-1 bg-emerald-600 text-white rounded border border-emerald-400 cursor-pointer text-[9px] font-mono font-bold flex items-center gap-1 shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-pulse";
                 alert("Mode Ruler PGA Aktif: Klik titik mana saja pada peta untuk mengukur jarak episentrum dan estimasi PGA / intensitas MMI.");
             } else {
-                btn.className = "px-2 py-1 bg-inner-box text-emerald-400 hover:text-white rounded border border-theme cursor-pointer text-[12px] font-mono font-bold flex items-center gap-1";
+                btn.className = "px-2 py-1 bg-inner-box text-emerald-400 hover:text-white rounded border border-theme cursor-pointer text-[9px] font-mono font-bold flex items-center gap-1";
             }
         }
 
@@ -1841,7 +1783,7 @@
                             <div>Jarak Episentrum: <b class="text-amber-400">${distKm.toFixed(1)} KM</b> (${distNM.toFixed(1)} NM)</div>
                             <div>Estimasi PGA Lokal: <b class="text-cyan-400">${pgaLocal.toFixed(3)} g</b></div>
                             <div>Intensitas Getaran: <b class="text-rose-400">${mmiLocal}</b></div>
-                            <div class="text-[12px] text-slate-400 mt-1 border-t border-slate-700 pt-1">Koordinat: ${targetCoord.lat.toFixed(3)}°, ${targetCoord.lng.toFixed(3)}°</div>
+                            <div class="text-[9px] text-slate-400 mt-1 border-t border-slate-700 pt-1">Koordinat: ${targetCoord.lat.toFixed(3)}°, ${targetCoord.lng.toFixed(3)}°</div>
                         </div>
                     `)
                     .openOn(mapInstance);
@@ -1979,7 +1921,7 @@
                         dashArray: '6, 8',
                         fill: false,
                         className: 'tsunami-isochrone-ring'
-                    }).bindTooltip(`<b class="font-mono text-[12px] text-rose-400">🌊 ${ringLabels[idx]}</b>`, { permanent: false, direction: 'center' });
+                    }).bindTooltip(`<b class="font-mono text-[9px] text-rose-400">🌊 ${ringLabels[idx]}</b>`, { permanent: false, direction: 'center' });
                     ring.addTo(mapInstance);
                     tsunamiIsochroneRings.push(ring);
                 });
@@ -1994,11 +1936,11 @@
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-tower-broadcast ${isTsunami ? 'text-red-400 animate-ping' : 'text-cyan-400 animate-pulse'} text-sm"></i>
                             <div>
-                                <span class="text-[11px] ${isTsunami ? 'text-red-400' : 'text-cyan-400'} font-tech font-black tracking-widest block leading-none mb-0.5">TELEMETRI BMKG</span>
+                                <span class="text-[8px] ${isTsunami ? 'text-red-400' : 'text-cyan-400'} font-tech font-black tracking-widest block leading-none mb-0.5">TELEMETRI BMKG</span>
                                 <h4 class="font-tech text-[11px] font-black text-white uppercase leading-tight">EPISENTRUM GEMPA</h4>
                             </div>
                         </div>
-                        <span class="text-[11px] px-1.5 py-0.5 ${isTsunami ? 'bg-red-950 text-red-300 border border-red-500 animate-pulse' : 'bg-cyan-950 text-cyan-300 border border-cyan-500'} rounded font-black font-mono">
+                        <span class="text-[8px] px-1.5 py-0.5 ${isTsunami ? 'bg-red-950 text-red-300 border border-red-500 animate-pulse' : 'bg-cyan-950 text-cyan-300 border border-cyan-500'} rounded font-black font-mono">
                             ${isTsunami ? '⚠️ TSUNAMI' : '● NORMAL'}
                         </span>
                     </div>
@@ -2006,32 +1948,32 @@
                     <div class="p-2.5 bg-[#091124] space-y-2">
                         <div class="grid grid-cols-2 gap-1.5 text-center">
                             <div class="bg-red-950/40 p-1.5 border border-red-500/40 rounded-lg shadow-inner">
-                                <span class="text-[11px] text-slate-400 block font-bold">KEKUATAN</span>
+                                <span class="text-[8px] text-slate-400 block font-bold">KEKUATAN</span>
                                 <strong class="text-red-400 font-tech text-sm font-black glow-text-rose">M ${mag}</strong>
                             </div>
                             <div class="bg-amber-950/40 p-1.5 border border-amber-500/40 rounded-lg shadow-inner">
-                                <span class="text-[11px] text-slate-400 block font-bold">KEDALAMAN</span>
+                                <span class="text-[8px] text-slate-400 block font-bold">KEDALAMAN</span>
                                 <strong class="text-amber-400 font-tech text-sm font-black glow-text-amber">${depthText}</strong>
                             </div>
                         </div>
 
-                        <div class="bg-slate-950/90 p-2 border border-slate-800 rounded-lg space-y-1 text-[13px] text-slate-300">
+                        <div class="bg-slate-950/90 p-2 border border-slate-800 rounded-lg space-y-1 text-[10px] text-slate-300">
                             <div class="flex items-start gap-1">
                                 <i class="fa-solid fa-location-dot text-rose-400 text-xs mt-0.5 shrink-0"></i>
                                 <div><b class="text-white">Wilayah:</b> ${title}</div>
                             </div>
-                            <div class="flex items-center gap-1 text-[12px] text-slate-400">
+                            <div class="flex items-center gap-1 text-[9px] text-slate-400">
                                 <i class="fa-regular fa-clock text-cyan-400 text-xs shrink-0"></i>
                                 <div><b>Waktu:</b> <span class="text-cyan-300 font-mono">${timeText}</span></div>
                             </div>
-                            <div class="flex items-center gap-1 text-[12px] text-slate-400">
+                            <div class="flex items-center gap-1 text-[9px] text-slate-400">
                                 <i class="fa-solid fa-crosshairs text-emerald-400 text-xs shrink-0"></i>
                                 <div><b>Koordinat:</b> <span class="text-emerald-400 font-mono font-bold">${coords[0].toFixed(3)}°, ${coords[1].toFixed(3)}°</span></div>
                             </div>
                         </div>
 
-                        <div class="${isTsunami ? 'bg-red-950/80 border-red-500 text-red-200' : 'bg-cyan-950/60 border-cyan-500/50 text-cyan-200'} p-2 border rounded-lg text-[12px] leading-relaxed shadow-sm">
-                            <div class="flex items-center gap-1 font-black uppercase text-[12px] mb-0.5 ${isTsunami ? 'text-red-400' : 'text-cyan-400'}">
+                        <div class="${isTsunami ? 'bg-red-950/80 border-red-500 text-red-200' : 'bg-cyan-950/60 border-cyan-500/50 text-cyan-200'} p-2 border rounded-lg text-[9px] leading-relaxed shadow-sm">
+                            <div class="flex items-center gap-1 font-black uppercase text-[9px] mb-0.5 ${isTsunami ? 'text-red-400' : 'text-cyan-400'}">
                                 <i class="fa-solid ${isTsunami ? 'fa-triangle-exclamation' : 'fa-circle-check'}"></i>
                                 <span>STATUS DISEMINASI BMKG:</span>
                             </div>
@@ -2105,9 +2047,9 @@
                     box.innerHTML = `
                         <div class="flex justify-between items-center mb-1">
                             <span class="text-cyan-400 font-bold text-xs group-hover:text-cyan-300">${q.title}</span>
-                            <span class="text-[12px] px-1.5 py-0.5 bg-cyan-950 text-cyan-300 rounded font-black font-mono border border-cyan-500/40">M ${q.mag}</span>
+                            <span class="text-[9px] px-1.5 py-0.5 bg-cyan-950 text-cyan-300 rounded font-black font-mono border border-cyan-500/40">M ${q.mag}</span>
                         </div>
-                        <div class="text-[13px] text-slate-400 flex items-center justify-between">
+                        <div class="text-[10px] text-slate-400 flex items-center justify-between">
                             <span>Kedalaman: ${q.depth} KM</span>
                             <span class="text-slate-500 font-mono">${q.dateStr}</span>
                         </div>
@@ -2126,9 +2068,9 @@
                     div.innerHTML = `
                         <div class="flex justify-between items-center mb-1">
                             <span class="text-amber-400 font-bold text-xs group-hover:text-amber-300">${h.name}</span>
-                            <span class="text-[12px] px-1.5 py-0.5 bg-amber-950 text-amber-300 rounded font-black font-mono border border-amber-500/40">M ${h.mag}</span>
+                            <span class="text-[9px] px-1.5 py-0.5 bg-amber-950 text-amber-300 rounded font-black font-mono border border-amber-500/40">M ${h.mag}</span>
                         </div>
-                        <div class="text-[13px] text-slate-400 leading-snug">${h.desc}</div>
+                        <div class="text-[10px] text-slate-400 leading-snug">${h.desc}</div>
                     `;
                     div.onclick = () => selectHistoricalQuake(h);
                     histContainer.appendChild(div);
@@ -2173,7 +2115,7 @@
             }
             const liqEl = document.getElementById("calc-liq-val");
             liqEl.innerText = liqText;
-            liqEl.className = `${liqClass} text-[13px] font-black`;
+            liqEl.className = `${liqClass} text-[10px] font-black`;
 
             const isThrust = (faultType === "thrust" || faultType === "normal");
             evaluasiAlertSistem(magnitude, depth, isThrust);
@@ -2371,9 +2313,9 @@
 
         function switchPilar(id) {
             document.querySelectorAll('.pilar-btn').forEach(btn => {
-                btn.className = "pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all";
+                btn.className = "pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border border-slate-700 bg-slate-900 text-slate-400 font-bold cursor-pointer transition-all";
             });
-            document.getElementById(`btn-pilar-${id}`).className = "pilar-btn px-2 py-1.5 rounded-lg font-tech text-[13px] border-2 border-cyan-500 bg-cyan-950 text-cyan-400 font-black cursor-pointer transition-all";
+            document.getElementById(`btn-pilar-${id}`).className = "pilar-btn px-2 py-1.5 rounded-lg font-tech text-[10px] border-2 border-cyan-500 bg-cyan-950 text-cyan-400 font-black cursor-pointer transition-all";
             
             const pilarData = {
                 1: { title: "1. SEISMOMETER KEBENCANAAN NETWORK", desc: "Sensor fisis pencatat rambatan gelombang P-Wave & S-Wave guna mengalkulasi magnitudo dan episentrum gempa secara otomatis dalam < 3 menit." },
@@ -2443,7 +2385,7 @@
         function clearChatHistory() {
             document.getElementById('chatMessages').innerHTML = `
                 <div class="bg-[var(--bg-card)] p-3 rounded-xl border border-theme max-w-[95%] font-medium shadow-sm">
-                    <span class="text-cyan-400 font-mono text-[13px] block font-black mb-1">
+                    <span class="text-cyan-400 font-mono text-[10px] block font-black mb-1">
                         <i class="fa-solid fa-terminal text-cyan-500"></i> InaTEWS KERNEL REBOOTED:
                     </span>
                     Riwayat percakapan telah dibersihkan. Sistem siap menerima perintah baru.
@@ -2455,6 +2397,7 @@
             const inp = document.getElementById('chatInput');
             if (type === 'creator') inp.value = "Tampilkan Profil & Data Programmer Pengembang Sistem";
             else if (type === 'my_aplikasi') inp.value = "Buka Direktori 38 Aplikasi Ekosistem Portofolio Lengkap";
+            else if (type === 'algoritma_analysis') inp.value = "Jalankan Algoritma Analysis multi-metode GMPE & PSHA seismik";
             else if (type === 'analisa_gempa') inp.value = "Analisis kekuatan gempa terkini, estimasi PGA, dan risiko likuifaksi";
             else if (type === 'tsunami_eta') inp.value = "Bagaimana simulasi kecepatan gelombang tsunami dan estimasi waktu tiba di pantai?";
             else if (type === 'mitigasi') inp.value = "Jelaskan protokol mitigasi 20-20-20 dan checklist keselamatan struktur";
@@ -2470,7 +2413,7 @@
             const box = document.getElementById('chatMessages');
             box.innerHTML += `
                 <div class="bg-blue-900/70 p-2.5 rounded-xl self-end max-w-[90%] ml-auto text-white shadow-sm border border-blue-500/40 chat-card-animated">
-                    <span class="text-cyan-300 font-mono text-[12px] block font-black mb-0.5">USER:</span>
+                    <span class="text-cyan-300 font-mono text-[9px] block font-black mb-0.5">USER:</span>
                     ${val}
                 </div>
             `;
@@ -2481,8 +2424,120 @@
             let speechText = "";
             const query = val.toLowerCase();
 
+                        // 0. ALGORITMA ANALYSIS MULTI-METODE (GMPE NGA & PSHA SEISMIK)
+            if (query.includes('algoritma') || query.includes('algorithm') || query.includes('gmpe') || query.includes('boore') || query.includes('campbell') || query.includes('psha') || query.includes('fukushima') || (query.includes('analisis') && query.includes('ai'))) {
+                const mag = parseFloat(document.getElementById('slider-mag').value) / 10;
+                const depth = parseInt(document.getElementById('slider-depth').value);
+                const faultType = document.getElementById('select-fault').value;
+                const siteClass = document.getElementById('select-soil') ? document.getElementById('select-soil').value : 'SD';
+                
+                const Rrup = Math.sqrt(depth * depth + 50 * 50);
+                
+                // 1. Boore-Atkinson 2008 (NGA-West2)
+                const BA_lnPGA = -1.219 + 0.41 * Math.log(mag) - 1.0 * Math.log(Rrup + 0.033 * Math.pow(10, 0.41 * mag)) + 0.0712 * (mag - 6);
+                const BA_pga_g = Math.exp(BA_lnPGA);
+
+                // 2. Campbell-Bozorgnia 2014
+                const CB_lnPGA = -3.274 + 1.1 * (mag - 6) - 0.5 * Math.log(Rrup + 0.1 * Math.pow(10, 0.5 * mag)) - 0.0035 * Rrup;
+                const CB_pga_g = Math.exp(CB_lnPGA);
+
+                // 3. PSHA - Probabilistic Seismic Hazard Assessment (475 Tahun)
+                const poe = 0.10;
+                const returnPeriod = -50 / Math.log(1 - poe);
+                const psha_pga = Math.pow(10, -1.5 + 0.5 * mag - 0.3 * Math.log10(Rrup));
+                const psha_level = psha_pga > 0.4 ? 'TINGGI' : psha_pga > 0.2 ? 'SEDANG' : 'RENDAH';
+
+                // 4. Fukushima-Tanaka (FGC-98)
+                const FT_pga = Math.pow(10, -1.0 + 0.5 * mag - 1.73 * Math.log10(Rrup + 0.33 * Math.pow(10, 0.5 * mag)));
+
+                // 5. Makroseismic Intensity (MMI) - Bakun & Wentworth
+                let mmi_calc = 1.17 * mag - 1.22 * Math.log10(Rrup) - 0.46;
+                mmi_calc = Math.max(1, Math.min(12, mmi_calc));
+                const mmi_rounded = Math.round(mmi_calc);
+                const mmi_desc = ['I Tidak Terasa','II Sangat Lemah','III Lemah','IV Ringan','V Sedang','VI Cukup','VII Kuat','VIII Merusak','IX Menghancurkan','X Ekstrem','XI Bencana','XII Total'];
+
+                // 6. Seismic Risk Matrix
+                const pga_max = Math.max(BA_pga_g, CB_pga_g, psha_pga, FT_pga);
+                const liq_risk = pga_max > 0.3 ? 'TINGGI' : pga_max > 0.15 ? 'SEDANG' : 'RENDAH';
+                const tsunami_risk = (faultType === 'thrust' && mag >= 7.0) ? 'TINGGI' : (faultType === 'thrust' && mag >= 6.5) ? 'SEDANG' : 'RENDAH';
+                const risk_score = (pga_max * 40) + (liq_risk === 'TINGGI' ? 25 : liq_risk === 'SEDANG' ? 12 : 5) + (tsunami_risk === 'TINGGI' ? 25 : tsunami_risk === 'SEDANG' ? 12 : 5);
+                const risk_level = risk_score > 60 ? 'EKSTREM' : risk_score > 40 ? 'TINGGI' : risk_score > 20 ? 'SEDANG' : 'RENDAH';
+                const risk_color = risk_score > 60 ? 'text-red-400' : risk_score > 40 ? 'text-orange-400' : risk_score > 20 ? 'text-amber-400' : 'text-emerald-400';
+
+                botReply = `
+                <div class="chat-glow-monsoon p-3.5 bg-slate-950 rounded-xl space-y-2.5 font-mono text-xs chat-card-animated border border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+                    <div class="border-b border-amber-500/40 pb-2 flex justify-between items-center">
+                        <div>
+                            <span class="text-[9px] px-2 py-0.5 bg-amber-950 text-amber-300 border border-amber-500 rounded font-black uppercase tracking-wider">AI ALGORITHM v4.0</span>
+                            <h4 class="text-xs font-black font-tech text-amber-300 tracking-wider mt-1">MULTI-METHOD GMPE &amp; PSHA ANALYSIS</h4>
+                        </div>
+                        <span class="text-[10px] font-mono font-black text-amber-400 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-500/40">M ${mag.toFixed(1)} | ${depth} KM</span>
+                    </div>
+
+                    <div class="p-2 bg-slate-900 rounded-lg border border-slate-800 text-[10px] text-slate-300 flex flex-wrap justify-between gap-1">
+                        <span><b>Patahan:</b> ${faultType === 'thrust' ? 'Thrust (Sesar Naik)' : faultType === 'normal' ? 'Normal (Sesar Turun)' : 'Strike-Slip (Mendatar)'}</span>
+                        <span><b>Kelas Tanah:</b> ${siteClass} (${siteClass==='SC'?'Tanah Keras':siteClass==='SD'?'Tanah Sedang':'Tanah Lunak'})</span>
+                        <span><b>Jarak Rrup:</b> ${Rrup.toFixed(1)} km</span>
+                    </div>
+
+                    <div class="space-y-1.5 text-[11px]">
+                        <div class="p-2 bg-slate-900/90 rounded-lg border border-amber-500/30">
+                            <div class="flex items-center justify-between text-amber-400 font-bold mb-0.5">
+                                <span><i class="fa-solid fa-wave-square mr-1"></i>1. Boore-Atkinson 2008 (NGA-West2)</span>
+                                <b class="text-amber-300">${BA_pga_g.toFixed(4)} g</b>
+                            </div>
+                            <p class="text-slate-400 text-[10px] leading-snug">Estimasi atenuasi GMPE NGA-West2 dengan Vs30 = 350 m/s (Site D).</p>
+                        </div>
+
+                        <div class="p-2 bg-slate-900/90 rounded-lg border border-cyan-500/30">
+                            <div class="flex items-center justify-between text-cyan-400 font-bold mb-0.5">
+                                <span><i class="fa-solid fa-chart-line mr-1"></i>2. Campbell-Bozorgnia 2014</span>
+                                <b class="text-cyan-300">${CB_pga_g.toFixed(4)} g</b>
+                            </div>
+                            <p class="text-slate-400 text-[10px] leading-snug">Koreksi nonlinear site response dan kedalaman cekungan sedimen (Z2.5 = 1.8 km).</p>
+                        </div>
+
+                        <div class="p-2 bg-slate-900/90 rounded-lg border border-emerald-500/30">
+                            <div class="flex items-center justify-between text-emerald-400 font-bold mb-0.5">
+                                <span><i class="fa-solid fa-microscope mr-1"></i>3. Probabilistic Hazard (PSHA 475 Tahun)</span>
+                                <b class="text-emerald-300">${psha_pga.toFixed(4)} g (${psha_level})</b>
+                            </div>
+                            <p class="text-slate-400 text-[10px] leading-snug">Periode ulang ${returnPeriod.toFixed(0)} tahun (10% Probabilitas Terlampaui dalam 50 Tahun).</p>
+                        </div>
+
+                        <div class="p-2 bg-slate-900/90 rounded-lg border border-rose-500/30">
+                            <div class="flex items-center justify-between text-rose-400 font-bold mb-0.5">
+                                <span><i class="fa-solid fa-tower-broadcast mr-1"></i>4. Fukushima-Tanaka (FGC-98)</span>
+                                <b class="text-rose-300">${FT_pga.toFixed(4)} g</b>
+                            </div>
+                            <p class="text-slate-400 text-[10px] leading-snug">Model atenuasi empiris disesuaikan karakteristik subduksi &amp; kerak dangkal Indonesia.</p>
+                        </div>
+
+                        <div class="p-2 bg-slate-900/90 rounded-lg border border-indigo-500/30">
+                            <div class="flex items-center justify-between text-indigo-400 font-bold mb-0.5">
+                                <span><i class="fa-solid fa-flask mr-1"></i>5. Makroseismik Intensitas (Bakun-Wentworth)</span>
+                                <b class="text-indigo-300">${mmi_rounded} MMI</b>
+                            </div>
+                            <p class="text-slate-400 text-[10px] leading-snug">Skala getaran: <b>${mmi_desc[mmi_rounded-1]}</b> | Radius persepsi dampak: ~${(Math.exp(0.8*mag-2)*10).toFixed(0)} km.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-2.5 bg-gradient-to-r from-slate-900 to-indigo-950 rounded-xl border border-indigo-500/50 text-[11px]">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-indigo-300 font-bold"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i>SKOR RISIKO KOMPOSIT:</span>
+                            <b class="${risk_color} font-tech font-black">${risk_score.toFixed(1)} / 100 (${risk_level})</b>
+                        </div>
+                        <div class="flex justify-between text-slate-400 text-[10px] border-t border-indigo-500/30 pt-1">
+                            <span>PGA Max: <b class="text-white">${pga_max.toFixed(4)}g</b></span>
+                            <span>Likuifaksi: <b class="text-white">${liq_risk}</b></span>
+                            <span>Tsunami: <b class="text-white">${tsunami_risk}</b></span>
+                        </div>
+                    </div>
+                </div>`;
+                speechText = `Analisis algoritma seismik multi metode selesai. Skor bahaya komposit ${risk_score.toFixed(1)} dari 100, level ${risk_level}.`;
+            }
             // 1. MY APLIKASI DIRECTORY (PRIORITY MATCH)
-            if (query.includes('my aplikasi') || query.includes('portofolio') || query.includes('direktori') || query.includes('daftar aplikasi') || query.includes('aplikasi apa saja') || query.includes('semua aplikasi') || query.includes('38 aplikasi')) {
+            else if (query.includes('my aplikasi') || query.includes('portofolio') || query.includes('direktori') || query.includes('daftar aplikasi') || query.includes('aplikasi apa saja') || query.includes('semua aplikasi') || query.includes('38 aplikasi')) {
                 const appsList = [
                     { u: "https://adikds.github.io/jarvis-ai/", i: "fa-robot", n: "JARVIS AI", cat: "AI & Automation" },
                     { u: "https://adikds.github.io/edu-market-pro/", i: "fa-graduation-cap", n: "EduMarket Pro", cat: "Education & Market" },
@@ -2532,10 +2587,10 @@
                                 <i class="fa-solid ${app.i}"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <span class="text-[13px] font-bold text-slate-200 block truncate group-hover:text-indigo-300 transition-colors">${idx+1}. ${app.n}</span>
-                                <span class="text-[11px] text-slate-500 block truncate">${app.cat}</span>
+                                <span class="text-[10px] font-bold text-slate-200 block truncate group-hover:text-indigo-300 transition-colors">${idx+1}. ${app.n}</span>
+                                <span class="text-[8px] text-slate-500 block truncate">${app.cat}</span>
                             </div>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[12px] text-slate-600 group-hover:text-indigo-400"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-600 group-hover:text-indigo-400"></i>
                         </a>
                     `;
                 });
@@ -2545,66 +2600,76 @@
                 <div class="chat-glow-seismo p-3.5 bg-slate-950 rounded-xl space-y-2.5 font-mono text-xs chat-card-animated">
                     <div class="border-b border-indigo-500/40 pb-2 flex justify-between items-center">
                         <div>
-                            <span class="text-[12px] px-2 py-0.5 bg-indigo-950 text-indigo-300 border border-indigo-500 rounded font-black uppercase">PORTFOLIO ECOSYSTEM</span>
+                            <span class="text-[9px] px-2 py-0.5 bg-indigo-950 text-indigo-300 border border-indigo-500 rounded font-black uppercase">PORTFOLIO ECOSYSTEM</span>
                             <h4 class="text-xs font-black font-tech text-indigo-300 tracking-wider mt-1">DIREKTORI 38 APLIKASI MOHAMAD HARTADI</h4>
                         </div>
-                        <span class="text-[13px] font-mono font-black text-indigo-400 bg-indigo-950/80 px-2 py-1 rounded border border-indigo-500/40">38 APPS</span>
+                        <span class="text-[10px] font-mono font-black text-indigo-400 bg-indigo-950/80 px-2 py-1 rounded border border-indigo-500/40">38 APPS</span>
                     </div>
-                    <p class="text-[13px] text-slate-400 font-sans leading-snug">
+                    <p class="text-[10px] text-slate-400 font-sans leading-snug">
                         Klik pada kartu aplikasi di bawah ini untuk membukanya langsung di tab baru:
                     </p>
                     ${appsHtml}
                 </div>`;
                 speechText = "Menampilkan direktori lengkap tiga puluh delapan aplikasi portofolio milik Mohamad Hartadi.";
             }
-            // 2. CREATOR DATA (MOHAMAD HARTADI)
+                        // 2. CREATOR DATA (MOHAMAD HARTADI)
             else if (query.includes('creator') || query.includes('programmer') || query.includes('pembuat') || query.includes('pengembang') || query.includes('hartadi') || query.includes('adi') || query.includes('profil')) {
                 botReply = `
-                <div class="chat-glow-creator p-3.5 bg-slate-950 rounded-xl space-y-3 font-mono text-xs chat-card-animated">
-                    <div class="flex items-center gap-3 border-b border-pink-500/40 pb-2.5">
+                <div class="chat-glow-creator p-3.5 bg-slate-950 rounded-2xl space-y-3 font-mono text-xs chat-card-animated border-2 border-fuchsia-500/60 shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+                    <div class="flex items-center gap-3 border-b border-pink-500/40 pb-3">
                         <div class="programmer-avatar h-14 w-14 rounded-xl bg-slate-900 border-2 border-fuchsia-500 flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.7)] shrink-0">
                             <i class="fa-solid fa-laptop-code text-fuchsia-400 text-xl"></i>
                             <div class="absolute inset-0 rounded-xl border-2 border-fuchsia-400 animate-ping opacity-40"></div>
                             <div class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_8px_#10b981]"></div>
                         </div>
                         <div>
-                            <span class="text-[12px] px-2 py-0.5 bg-fuchsia-950 text-fuchsia-300 border border-fuchsia-500 rounded font-black tracking-widest uppercase">LEAD SYSTEM ARCHITECT</span>
+                            <span class="text-[9px] px-2 py-0.5 bg-fuchsia-950 text-fuchsia-300 border border-fuchsia-500 rounded font-black tracking-widest uppercase">LEAD SYSTEM ARCHITECT</span>
                             <h4 class="text-sm font-black font-tech text-fuchsia-400 tracking-wider mt-0.5">MOHAMAD HARTADI</h4>
-                            <p class="text-[13px] text-slate-400 font-bold">Civil, Geotechnical &amp; Aerospace Computing Engineer</p>
+                            <p class="text-[10px] text-slate-400 font-bold">Civil, Geotechnical &amp; Disaster Computing Specialist</p>
                         </div>
                     </div>
 
-                    <div class="space-y-2 text-[11px] font-bold">
-                        <a href="https://wa.me/6282231036047?text=Halo%20Mohamad%20Hartadi%20InaTEWS" target="_blank" class="p-2 bg-slate-900 border border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-950/40 rounded-lg text-emerald-300 transition-all flex items-center justify-between group">
-                            <span class="flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-emerald-400 text-sm group-hover:scale-110 transition-transform"></i>
-                                <span>WhatsApp: 082231036047</span>
-                            </span>
-                            <i class="fa-solid fa-paper-plane text-[13px]"></i>
+                    <!-- Kontak & Media Sosial Resmi (Sesuai Foto Unggahan) -->
+                    <div class="bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 space-y-2 font-mono">
+                        <a href="https://wa.me/6282231036047?text=Halo%20Mohamad%20Hartadi%20InaTEWS" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition-all group cursor-pointer border border-transparent hover:border-emerald-500/40">
+                            <div class="w-9 h-9 rounded-full bg-emerald-950/80 border border-emerald-500/60 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(16,185,129,0.3)] group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold">KONTAK WHATSAPP RESMI</span>
+                                <span class="text-emerald-400 text-xs font-black tracking-wider group-hover:underline block">082231036047</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-600 group-hover:text-emerald-400"></i>
                         </a>
 
-                        <a href="https://www.facebook.com/m.hartadi" target="_blank" class="p-2 bg-slate-900 border border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-950/40 rounded-lg text-cyan-300 transition-all flex items-center justify-between group">
-                            <span class="flex items-center gap-2">
-                                <i class="fa-brands fa-facebook text-cyan-400 text-sm group-hover:scale-110 transition-transform"></i>
-                                <span>Facebook: facebook.com/m.hartadi</span>
-                            </span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[13px]"></i>
+                        <a href="https://www.facebook.com/m.hartadi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition-all group cursor-pointer border border-transparent hover:border-cyan-500/40">
+                            <div class="w-9 h-9 rounded-full bg-cyan-950/80 border border-cyan-500/60 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(6,182,212,0.3)] group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-facebook text-cyan-400 text-lg"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold">PROFIL FACEBOOK</span>
+                                <span class="text-cyan-400 text-xs font-black tracking-wider group-hover:underline block truncate">facebook.com/m.hartadi</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-600 group-hover:text-cyan-400"></i>
                         </a>
 
-                        <a href="https://newbieonline7.blogspot.com/" target="_blank" class="p-2 bg-slate-900 border border-pink-500/50 hover:border-pink-400 hover:bg-pink-950/40 rounded-lg text-pink-300 transition-all flex items-center justify-between group">
-                            <span class="flex items-center gap-2">
-                                <i class="fa-solid fa-globe text-pink-400 text-sm group-hover:scale-110 transition-transform"></i>
-                                <span>Blog Resmi: newbieonline7.blogspot.com</span>
-                            </span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[13px]"></i>
+                        <a href="https://newbieonline7.blogspot.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition-all group cursor-pointer border border-transparent hover:border-pink-500/40">
+                            <div class="w-9 h-9 rounded-full bg-pink-950/80 border border-pink-500/60 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(236,72,153,0.3)] group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-globe text-pink-400 text-lg"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="block text-[9px] text-slate-400 tracking-wider uppercase font-bold">PORTAL BLOG RESMI</span>
+                                <span class="text-pink-400 text-xs font-black tracking-wider group-hover:underline block truncate">newbieonline7.blogspot.com</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-600 group-hover:text-pink-400"></i>
                         </a>
                     </div>
 
-                    <button onclick="openCreatorModal()" class="w-full py-1.5 bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white rounded-lg font-tech font-bold text-[13px] text-center cursor-pointer shadow-md transition-all">
+                    <button onclick="openCreatorModal()" class="w-full py-1.5 bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white rounded-lg font-tech font-bold text-[10px] text-center cursor-pointer shadow-md transition-all">
                         <i class="fa-solid fa-id-card mr-1"></i> BUKA DETAIL PROFIL KREATOR
                     </button>
                 </div>`;
-                speechText = "Menampilkan profil dan identitas resmi pengembang sistem, Mohamad Hartadi.";
+                speechText = "Menampilkan profil resmi pengembang sistem Mohamad Hartadi beserta kontak WhatsApp, profil Facebook, dan blog resmi.";
             }
             // 3. ANALISA SEISMIK & GEOTEKNIK (PGA / LIKUIFAKSI)
             else if (query.includes('analisa') || query.includes('seismik') || query.includes('pga') || query.includes('mmi') || query.includes('likuifaksi')) {
@@ -2625,7 +2690,7 @@
                         <div>● <b>Skala Intensitas MMI:</b> <span class="text-amber-400 font-bold">${mmi}</span></div>
                         <div>● <b>Potensi Bahaya Likuifaksi:</b> <span class="text-rose-400 font-bold">${liq}</span></div>
                     </div>
-                    <p class="text-[13px] text-slate-400 leading-snug pt-1 border-t border-slate-800">
+                    <p class="text-[10px] text-slate-400 leading-snug pt-1 border-t border-slate-800">
                         Perhitungan PGA menggunakan model atenuasi atenuatif dan faktor amplifikasi tanah situs SNI 1726.
                     </p>
                 </div>`;
@@ -2638,12 +2703,12 @@
                     <b class="text-rose-400 text-xs font-tech block border-b border-rose-500/40 pb-1.5">
                         <i class="fa-solid fa-water mr-1"></i> FORMULA FISIS KECEPATAN GELOMBANG TSUNAMI
                     </b>
-                    <div class="p-2 bg-slate-900 rounded-lg text-[13px] text-slate-300 space-y-1">
+                    <div class="p-2 bg-slate-900 rounded-lg text-[10px] text-slate-300 space-y-1">
                         <div><b>Rumus Kecepatan Gelombang Dangkal:</b> <code class="text-cyan-400 font-bold">v = √(g · h)</code></div>
                         <div>● Di Laut Dalam (h = 4.000 m): <b class="text-emerald-400">v ≈ 713 km/jam (200 m/s)</b></div>
                         <div>● Di Laut Dangkal (h = 50 m): <b class="text-amber-400">v ≈ 79 km/jam (22 m/s)</b></div>
                     </div>
-                    <p class="text-[13px] text-slate-400 leading-snug">
+                    <p class="text-[10px] text-slate-400 leading-snug">
                         Saat gelombang memasuki perairan dangkal pantai, kecepatan berkurang drastis namun tinggi gelombang mengalami amplifikasi (*shoaling effect*) hingga berkali lipat.
                     </p>
                 </div>`;
@@ -2656,7 +2721,7 @@
                     <b class="text-emerald-400 text-xs font-tech block border-b border-emerald-500/40 pb-1.5">
                         <i class="fa-solid fa-shield-halved mr-1"></i> PROTOKOL MITIGASI KEBENCANAAN 20-20-20
                     </b>
-                    <div class="space-y-1.5 text-[13px] text-slate-300">
+                    <div class="space-y-1.5 text-[10px] text-slate-300">
                         <div class="p-1.5 bg-slate-900 rounded border border-slate-800">
                             <b class="text-cyan-400">1. GUNCANGAN 20 DETIK:</b> Jika gempa berlangsung kontinu &gt; 20 detik, segera anggap berpotensi tsunami tanpa menunggu sirine.
                         </div>
@@ -2683,7 +2748,8 @@
                         <div>● <b>Gelombang Laut Maritim:</b> <span class="text-red-400 font-bold">1.05 - 2.71 Meter (Waspada)</span></div>
                     </div>
                     <div class="pt-1 flex gap-2">
-                        <button onclick="toggleMonsoonInterface()" class="flex-1 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-[13px] font-bold cursor-pointer">Buka Panel Muson</button>
+                        <button onclick="toggleMonsoonInterface()" class="flex-1 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-[10px] font-bold cursor-pointer">Buka Panel Muson</button>
+                        <a href="https://adikds.github.io/MONITORING-PREDIKSI-ANGIN-MUSON-INDONESIA/" target="_blank" rel="noopener noreferrer" class="flex-1 py-1 bg-cyan-700 hover:bg-cyan-600 text-white rounded text-[10px] font-bold text-center flex items-center justify-center gap-1 cursor-pointer"><span>Cuaca Analysis</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
                     </div>
                 </div>`;
                 speechText = "Analisis meteorologi: Indeks muson 84%, status ENSO La Nina, gelombang laut 1 hingga 2.7 meter.";
@@ -2691,7 +2757,7 @@
             // 7. GENERAL WIKIPEDIA / GOOGLE KNOWLEDGE SEARCH
             else {
                 const loadingId = "loader-" + Date.now();
-                box.innerHTML += `<div id="${loadingId}" class="bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-400 text-[13px] font-mono"><i class="fa-solid fa-circle-notch animate-spin text-cyan-400 mr-2"></i>Mencari di ensiklopedia Wikipedia &amp; Google...</div>`;
+                box.innerHTML += `<div id="${loadingId}" class="bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-400 text-[10px] font-mono"><i class="fa-solid fa-circle-notch animate-spin text-cyan-400 mr-2"></i>Mencari di ensiklopedia Wikipedia &amp; Google...</div>`;
                 box.scrollTop = box.scrollHeight;
 
                 try {
@@ -2718,12 +2784,12 @@
                                     <b class="text-indigo-300 text-xs uppercase">[WIKIPEDIA: ${title}]</b>
                                     <i class="fa-brands fa-wikipedia-w text-indigo-400"></i>
                                 </div>
-                                <p class="text-slate-300 text-[13px] leading-relaxed max-h-36 overflow-y-auto pr-1">
+                                <p class="text-slate-300 text-[10px] leading-relaxed max-h-36 overflow-y-auto pr-1">
                                     ${extractText}
                                 </p>
                                 <div class="flex gap-1.5 pt-1">
-                                    <a href="${wikiLink}" target="_blank" class="flex-1 py-1 bg-slate-900 hover:bg-slate-800 border border-indigo-500/40 rounded text-center text-indigo-300 font-bold text-[12px]">Wikipedia</a>
-                                    <a href="${googleLink}" target="_blank" class="flex-1 py-1 bg-slate-900 hover:bg-slate-800 border border-emerald-500/40 rounded text-center text-emerald-300 font-bold text-[12px]">Google</a>
+                                    <a href="${wikiLink}" target="_blank" class="flex-1 py-1 bg-slate-900 hover:bg-slate-800 border border-indigo-500/40 rounded text-center text-indigo-300 font-bold text-[9px]">Wikipedia</a>
+                                    <a href="${googleLink}" target="_blank" class="flex-1 py-1 bg-slate-900 hover:bg-slate-800 border border-emerald-500/40 rounded text-center text-emerald-300 font-bold text-[9px]">Google</a>
                                 </div>
                             </div>`;
                             speechText = `Menampilkan rujukan Wikipedia mengenai ${title}.`;
@@ -2734,12 +2800,12 @@
                         botReply = `
                         <div class="chat-glow-seismo p-3 bg-slate-950 rounded-xl space-y-2 font-mono text-xs chat-card-animated">
                             <b class="text-cyan-400 text-xs block">ANALISIS: "${val}"</b>
-                            <p class="text-slate-300 text-[13px]">
+                            <p class="text-slate-300 text-[10px]">
                                 Pertanyaan telah diproses. Anda dapat menelusuri literatur ilmiah lengkap melalui tautan di bawah:
                             </p>
                             <div class="flex gap-1.5 pt-1">
-                                <a href="${googleLink}" target="_blank" class="flex-1 py-1.5 bg-slate-900 border border-cyan-500/50 rounded text-center text-cyan-300 font-bold text-[13px]"><i class="fa-brands fa-google mr-1"></i> Google Search</a>
-                                <a href="${geminiLink}" target="_blank" class="flex-1 py-1.5 bg-slate-900 border border-fuchsia-500/50 rounded text-center text-fuchsia-300 font-bold text-[13px]"><i class="fa-solid fa-brain mr-1"></i> Gemini AI</a>
+                                <a href="${googleLink}" target="_blank" class="flex-1 py-1.5 bg-slate-900 border border-cyan-500/50 rounded text-center text-cyan-300 font-bold text-[10px]"><i class="fa-brands fa-google mr-1"></i> Google Search</a>
+                                <a href="${geminiLink}" target="_blank" class="flex-1 py-1.5 bg-slate-900 border border-fuchsia-500/50 rounded text-center text-fuchsia-300 font-bold text-[10px]"><i class="fa-solid fa-brain mr-1"></i> Gemini AI</a>
                             </div>
                         </div>`;
                         speechText = "Pertanyaan telah diproses. Referensi dapat diakses melalui tautan Google di layar.";
@@ -2755,8 +2821,8 @@
             setTimeout(() => {
                 box.innerHTML += `
                     <div class="bg-[var(--bg-card)] p-3 rounded-xl border border-theme max-w-[95%] shadow-md leading-relaxed chat-card-animated">
-                        <span class="text-cyan-400 font-mono text-[13px] block font-black mb-1.5 border-b border-theme pb-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-robot text-cyan-400"></i> InaTEWS AI ANALYST:
+                        <span class="text-cyan-400 font-mono text-[10px] block font-black mb-1.5 border-b border-theme pb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-robot text-cyan-400"></i> InaTEWS SEISMO COPILOT:
                         </span>
                         ${botReply}
                     </div>
@@ -2764,74 +2830,6 @@
                 box.scrollTop = box.scrollHeight;
                 speakText(speechText);
             }, 250);
-        }
-
-        
-        // ================= ADVANCED MULTI-METHOD SEISMIC ANALYSIS =================
-        function runAdvancedAnalysis() {
-            const btn = document.getElementById('btnAdvAnalysis');
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> ANALYZING...';
-            btn.disabled = true;
-            
-            const mag = parseFloat(document.getElementById('slider-mag').value) / 10;
-            const depth = parseInt(document.getElementById('slider-depth').value);
-            const faultType = document.getElementById('select-fault').value;
-            const siteClass = document.getElementById('select-site') ? document.getElementById('select-site').value : 'SD';
-            
-            // Haversine distance (assume distance = sqrt(depth² + 50²) for near-field)
-            const Rrup = Math.sqrt(depth * depth + 50 * 50);
-            
-            // 1. Boore-Atkinson 2008 (NGA-West2)
-            const BA_lnPGA = -1.219 + 0.41 * Math.log(mag) - 1.0 * Math.log(Rrup + 0.033 * Math.pow(10, 0.41 * mag)) + 0.0712 * (mag - 6);
-            const BA_pga = Math.exp(BA_lnPGA) * 981; // convert g to cm/s² then to g
-            const BA_pga_g = BA_pga / 981;
-            document.getElementById('adv-boore').innerHTML = `PGA: <b class="text-amber-300">${BA_pga_g.toFixed(4)} g</b> | Rrup: ${Rrup.toFixed(1)} km | Mw: ${mag.toFixed(1)} | Vs30: 350 m/s (Site D)`;
-
-            // 2. Campbell-Bozorgnia 2014
-            const CB_lnPGA = -3.274 + 1.1 * (mag - 6) - 0.5 * Math.log(Rrup + 0.1 * Math.pow(10, 0.5 * mag)) - 0.0035 * Rrup;
-            const CB_pga_g = Math.exp(CB_lnPGA);
-            document.getElementById('adv-campbell').innerHTML = `PGA: <b class="text-cyan-300">${CB_pga_g.toFixed(4)} g</b> | Basin: Jakarta (Z2.5=1.8km) | Nonlinear Site Amp: 1.35x | σln: 0.55`;
-
-            // 3. PSHA - Probabilistic Seismic Hazard Assessment
-            const poe = 0.10; // 10% probability of exceedance in 50 years
-            const returnPeriod = -50 / Math.log(1 - poe); // ~475 years
-            const psha_pga = Math.pow(10, -1.5 + 0.5 * mag - 0.3 * Math.log10(Rrup));
-            document.getElementById('adv-psha').innerHTML = `PGA475: <b class="text-emerald-300">${psha_pga.toFixed(3)} g</b> | Return Period: ${returnPeriod.toFixed(0)} yrs | POE(50yr): 10% | Hazard Level: ${psha_pga > 0.4 ? 'TINGGI' : psha_pga > 0.2 ? 'SEDANG' : 'RENDAH'}`;
-
-            // 4. Fukushima-Tanaka (FGC-98) adapted for Indonesia
-            const FT_pga = Math.pow(10, -1.0 + 0.5 * mag - 1.73 * Math.log10(Rrup + 0.33 * Math.pow(10, 0.5 * mag)));
-            document.getElementById('adv-fukushima').innerHTML = `PGA: <b class="text-rose-300">${FT_pga.toFixed(4)} g</b> | Subduction: ${faultType === 'thrust' ? 'Yes (Megathrust)' : 'No (Shallow Crust)'} | Depth: ${depth} km`;
-
-            // 5. Makroseismic Intensity (MMI) - using Bakun & Wentworth
-            let mmi_calc = 1.17 * mag - 1.22 * Math.log10(Rrup) - 0.46;
-            mmi_calc = Math.max(1, Math.min(12, mmi_calc));
-            const mmi_rounded = Math.round(mmi_calc);
-            const mmi_desc = ['I Tidak Terasa','II Sangat Lemah','III Lemah','IV Ringan','V Sedang','VI Cukup','VII Kuat','VIII Merusak','IX Menghancurkan','X Ekstrem','XI Bencana','XII Total'];
-            document.getElementById('adv-mmi').innerHTML = `MMI: <b class="text-indigo-300">${mmi_rounded} - ${mmi_desc[mmi_rounded-1]}</b> | Radius Persepsi: ${(Math.exp(0.8*mag-2)*10).toFixed(0)} km`;
-
-            // 6. Seismic Risk Matrix
-            const pga_max = Math.max(BA_pga_g, CB_pga_g, psha_pga, FT_pga);
-            const liq_risk = pga_max > 0.3 ? 'TINGGI' : pga_max > 0.15 ? 'SEDANG' : 'RENDAH';
-            const tsunami_risk = (faultType === 'thrust' && mag >= 7.0) ? 'TINGGI' : (faultType === 'thrust' && mag >= 6.5) ? 'SEDANG' : 'RENDAH';
-            const risk_score = (pga_max * 40) + (liq_risk === 'TINGGI' ? 25 : liq_risk === 'SEDANG' ? 12 : 5) + (tsunami_risk === 'TINGGI' ? 25 : tsunami_risk === 'SEDANG' ? 12 : 5);
-            const risk_level = risk_score > 60 ? 'EKSTREM' : risk_score > 40 ? 'TINGGI' : risk_score > 20 ? 'SEDANG' : 'RENDAH';
-            const risk_color = risk_score > 60 ? 'text-red-400' : risk_score > 40 ? 'text-orange-400' : risk_score > 20 ? 'text-amber-400' : 'text-emerald-400';
-            document.getElementById('adv-risk').innerHTML = `Skor Komposit: <b class="${risk_color}">${risk_score.toFixed(1)}/100 (${risk_level})</b> | PGA Max: ${pga_max.toFixed(4)}g | Likuifaksi: ${liq_risk} | Tsunami: ${tsunami_risk}`;
-            
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-bolt"></i> RUN';
-                btn.disabled = false;
-                speakText(`Analisis algoritma seismik selesai. Skor bahaya komposit ${risk_score.toFixed(1)} dari 100, level ${risk_level}.`);
-            }, 800);
-        }
-
-        
-        function quickChatAction(action) {
-            const input = document.getElementById('chatInput');
-            if (input) {
-                input.value = action;
-                sendChatMessage();
-            }
         }
 
         // ================= MODAL CONTROLS =================
